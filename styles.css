@@ -422,3 +422,35 @@ body.perfil-modal-abierto{overflow:hidden;}
  .concursante-card__cuerpo{grid-template-columns:minmax(0,1fr) 88px;gap:9px;}
  .concursante-card__foto{min-height:130px;}
 }
+
+
+/* Fotografías individuales en alta resolución: mantener el encuadre completo sin recortes agresivos. */
+.concursante-card__foto {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 170px;
+  max-height: 220px;
+  object-fit: contain;
+  object-position: center;
+  background: #f2f4f5;
+  background-image: none;
+  border-radius: 12px;
+}
+.perfil-modal__foto {
+  display: block;
+  width: min(100%, 420px);
+  height: auto;
+  max-height: min(62vh, 560px);
+  aspect-ratio: auto;
+  object-fit: contain;
+  object-position: center;
+  margin: 0 auto 22px;
+  background: #f2f4f5;
+  background-image: none;
+  border-radius: 16px;
+}
+.concursante-foto-respaldo {
+  background-size: 600% 500%;
+  background-repeat: no-repeat;
+}

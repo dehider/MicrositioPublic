@@ -55,18 +55,26 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   function crearFoto(p, grande = false) {
-    // Hoja de contacto del repositorio: 6 columnas x 5 filas, una celda por ID.
-    // El perfil 24 no tiene fotografía identificable en el documento fuente.
+    // Fotografías individuales extraídas de Perfiles.pdf, conservando el encuadre original.
+    // El perfil 24 no tiene una fotografía propia identificable en el documento fuente.
     if (p.id === 24) return null;
-    const indice = p.id - 1;
-    const columna = indice % 6;
-    const fila = Math.floor(indice / 6);
-    const foto = document.createElement('div');
+    const foto = document.createElement('img');
     foto.className = grande ? 'perfil-modal__foto' : 'concursante-card__foto';
-    foto.setAttribute('role', 'img');
-    foto.setAttribute('aria-label', 'Fotografía de ' + p.nombre);
-    foto.style.backgroundImage = "url('images/concursantes-sprite.jpg')";
-    foto.style.backgroundPosition = (columna * 20) + '% ' + (fila * 25) + '%';
+    foto.alt = 'Fotografía de ' + p.nombre;
+    foto.loading = grande ? 'eager' : 'lazy';
+    foto.decoding = 'async';
+    foto.src = 'images/concursante-' + String(p.id).padStart(2, '0') + '.jpg';
+    // Respaldo temporal para que no desaparezca la foto si aún no se han cargado los archivos individuales.
+    foto.addEventListener('error', function respaldo() {
+      const indice = p.id - 1;
+      const fallback = document.createElement('div');
+      fallback.className = grande ? 'perfil-modal__foto concursante-foto-respaldo' : 'concursante-card__foto concursante-foto-respaldo';
+      fallback.setAttribute('role', 'img');
+      fallback.setAttribute('aria-label', 'Fotografía de ' + p.nombre);
+      fallback.style.backgroundImage = "url('images/concursantes-sprite.jpg')";
+      fallback.style.backgroundPosition = ((indice % 6) * 20) + '% ' + (Math.floor(indice / 6) * 25) + '%';
+      foto.replaceWith(fallback);
+    }, { once: true });
     return foto;
   }
 
