@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VII Festival Internacional Universitario de Música Vallenata UNAD — Vista previa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<button class="volver-arriba" id="volverArriba" type="button" aria-label="Volver arriba">↑</button>
+<div class="aviso-preview">Vista previa estática — sin backend PHP. Los formularios no envían datos y los enlaces de "Más secciones" son de demostración; en el sitio real cada uno abre su propia página editable.</div>
+<a href="#contenido" class="salto-enlace">Saltar al contenido</a>
+
+<header class="cabecera">
+  <div class="contenedor cabecera__barra">
+    <a href="#inicio" class="marca">
+      <img class="logo-unad" src="https://commons.wikimedia.org/wiki/Special:FilePath/Logo_de_la_UNAD.svg" alt="Logo oficial de la Universidad Nacional Abierta y a Distancia, UNAD">
+      <span class="marca__texto"><strong>Festival Vallenato</strong><small>Universitario · VII Edición</small><span class="sello-acreditacion-mini">UNAD · Acreditada en alta calidad</span></span>
+    </a>
+    <button class="menu-boton" id="menuBoton" aria-expanded="false" aria-controls="menuPrincipal" aria-label="Abrir menú"><span></span><span></span><span></span></button>
+    <nav id="menuPrincipal" class="nav">
+      <a href="#inicio">Inicio</a>
+      <a href="#poncho">Homenaje a los maestros</a>
+      <a href="#programacion">Programación</a>
+      <a href="#galeria">Galería</a>
+      <a href="#inscripciones">Ediciones anteriores</a>
+      <a href="#contacto">Contacto</a>
+      <div class="nav-drop">
+        <button type="button" class="nav-drop__disparador" id="masSeccionesBoton" aria-expanded="false">Más secciones <span class="nav-drop__flecha">▾</span></button>
+        <div class="nav-drop__panel" id="masSeccionesPanel">
+          <a href="#paginaConstruccion" data-construccion><span>📌</span> Requerimientos</a>
+          <a href="#paginaConstruccion" data-construccion><span>📄</span> Requisitos</a>
+          <a href="#inscripciones"><span>🏛️</span> Ediciones anteriores</a>
+          <a href="concursantes.html"><span>🎉</span> Concursantes</a>
+          <a href="#paginaConstruccion" data-construccion><span>🔍</span> Pre Seleccionados</a>
+          <a href="#paginaConstruccion" data-construccion><span>🏆</span> Ganadores</a>
+          <a href="#programacion"><span>📅</span> Agenda</a>
+          <a href="#paginaConstruccion" data-construccion><span>🧑‍⚖️</span> Jurados</a>
+          <a href="#paginaConstruccion" data-construccion><span>🎙️</span> Conversatorio Vida y Obra</a>
+          <a href="#paginaConstruccion" data-construccion><span>🎖️</span> Condecorados Vida y Obra</a>
+          <a href="#paginaConstruccion" data-construccion><span>💬</span> Foro Académico</a>
+          <a href="#paginaConstruccion" data-construccion><span>🌱</span> Semillero Cultura Caribe</a>
+          <a href="#paginaConstruccion" data-construccion><span>📖</span> Revista Vallenata (Aires Vallento)</a>
+          <a href="#paginaConstruccion" data-construccion><span>🌟</span> Invitados especiales</a>
+          <a href="#paginaConstruccion" data-construccion><span>🚀</span> Incubadora de Talento</a>
+          <a href="#paginaConstruccion" data-construccion><span>🎪</span> Expofestival UNADISTA</a>
+          <a href="#paginaConstruccion" data-construccion><span>📰</span> Rueda de prensa</a>
+          <a href="#paginaConstruccion" data-construccion><span>🍽️</span> Almuerzo y Refrigerio</a>
+          <a href="#paginaConstruccion" data-construccion><span>📈</span> Línea de Tiempo</a>
+          <a href="#galeria"><span>📷</span> Fotografía y Videos</a>
+        </div>
+      </div>
+      <a href="#" class="nav__cta app-link" data-app-placeholder aria-label="Enlace a la aplicación, pendiente de configurar">App</a>
+    </nav>
+  </div>
+</header>
+
+<main id="contenido">
+
+<section class="heroe" id="inicio">
+  <div class="heroe__fuelle"></div>
+  <div class="contenedor">
+    <div class="heroe__contenido">
+      <span class="heroe__ojo">🪗 VII Edición · Del 17 al 19 de noviembre de 2026</span>
+      <h1>Festival Internacional <em> Universitario </em> de Música Vallenata - UNAD </h1>
+      <p class="heroe__sub">Tres días para celebrar el acordeón, la caja, la guacharaca y la memoria viva del Caribe. Esta edición rinde homenaje a dos leyendas: <strong>Poncho Zuleta y el Cocha Molina</strong>.</p>
+      <div class="heroe__acciones">
+        <a href="#" class="boton boton--dorado boton--grande app-link" data-app-placeholder aria-label="Enlace a la aplicación, pendiente de configurar">App <span aria-hidden="true">↗</span></a>
+        <a href="#programacion" class="boton boton--linea" style="color:#fff;">Ver programación</a>
+      </div>
+      <div class="contador" id="contadorFestival" data-fecha="2026-11-17T08:00:00">
+        <div class="contador__bloque"><span class="contador__num" id="cDias">--</span><span class="contador__etq">Días</span></div>
+        <div class="contador__bloque"><span class="contador__num" id="cHoras">--</span><span class="contador__etq">Horas</span></div>
+        <div class="contador__bloque"><span class="contador__num" id="cMin">--</span><span class="contador__etq">Min</span></div>
+        <div class="contador__bloque"><span class="contador__num" id="cSeg">--</span><span class="contador__etq">Seg</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="seccion">
+  <div class="contenedor">
+    <div class="rejilla rejilla--3">
+      <div class="tarjeta">
+        <svg class="icono-vallenato" viewBox="0 0 64 64"><rect x="10" y="14" width="18" height="36" rx="3" fill="#ee7203"/><rect x="36" y="14" width="18" height="36" rx="3" fill="#005681"/><rect x="27" y="10" width="10" height="44" rx="2" fill="#f4be00"/><circle cx="19" cy="24" r="2" fill="#fff"/><circle cx="19" cy="32" r="2" fill="#fff"/><circle cx="19" cy="40" r="2" fill="#fff"/><circle cx="45" cy="24" r="2" fill="#fff"/><circle cx="45" cy="32" r="2" fill="#fff"/><circle cx="45" cy="40" r="2" fill="#fff"/></svg>
+        <h3>Un escenario para talento universitario</h3>
+        <p>Estudiantes, docentes y egresados compiten y comparten tarima en acordeón, canción inédita y piquería.</p>
+      </div>
+      <div class="tarjeta">
+        <svg class="icono-vallenato" viewBox="0 0 64 64"><rect x="14" y="12" width="36" height="40" rx="4" fill="#f4be00"/><rect x="14" y="12" width="36" height="10" rx="4" fill="#ee7203"/><line x1="20" y1="30" x2="44" y2="30" stroke="#005681" stroke-width="2"/><line x1="20" y1="38" x2="44" y2="38" stroke="#005681" stroke-width="2"/></svg>
+        <h3>Formación y cultura vallenata</h3>
+        <p>Talleres y conversatorios sobre la historia, los juglares y el legado del vallenato.</p>
+      </div>
+      <div class="tarjeta">
+        <svg class="icono-vallenato" viewBox="0 0 64 64"><rect x="28" y="8" width="8" height="48" rx="3" fill="#005681"/><circle cx="32" cy="12" r="4" fill="#ee7203"/><path d="M20 20 L44 24 M20 28 L44 32 M20 36 L44 40" stroke="#f4be00" stroke-width="2"/></svg>
+        <h3>Homenaje a dos leyendas</h3>
+        <p>La voz inconfundible de <strong>Poncho Zuleta</strong> y el virtuosismo del acordeón de <strong>Cocha Molina</strong> protagonizan esta edición.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="seccion seccion--oscura homenaje" id="poncho">
+  <div class="homenaje__bordado" aria-hidden="true">✦ ✧ ✦ ✧ ✦ ✧ ✦</div>
+  <div class="contenedor">
+    <div class="seccion__cabecera">
+      <span class="seccion__kicker">Homenaje de la VII edición</span>
+      <h2>Dos maestros. Un mismo sentimiento vallenato.</h2>
+      <p>Celebramos la unión entre una voz que es historia y un acordeón que se volvió leyenda.</p>
+    </div>
+    <div class="homenaje__maestros">
+      <article class="maestro-card">
+        <a class="maestro-card__foto" href="https://www.elespectador.com/entretenimiento/musica/poncho-zuleta-y-cocha-molina-presentan-al-mundo-el-juglar-y-el-rey-de-reyes/" target="_blank" rel="noopener noreferrer" aria-label="Ver artículo sobre Poncho Zuleta y Cocha Molina">
+          <img src="https://cloudfront-us-east-1.images.arcpublishing.com/elespectador/MXMMQKSXNFFPRJWNBVIQBXIE6Y.jpg" alt="Cocha Molina con su acordeón rojo junto a Poncho Zuleta" loading="lazy">
+          <span class="maestro-card__sello">El juglar</span>
+        </a>
+        <div class="maestro-card__texto"><span class="seccion__kicker">La voz del pueblo</span><h3>Tomás Alfonso “Poncho” Zuleta</h3><p>El Pulmón de Oro: una voz poderosa, un estilo inconfundible y un legado que sigue pasando de generación en generación.</p></div>
+      </article>
+      <article class="maestro-card">
+        <a class="maestro-card__foto" href="https://semanariolacalle.com/del-acordeon-al-teclado-la-nueva-apuesta-del-cocha-molina-para-preservar-la-musica-vallenata/" target="_blank" rel="noopener noreferrer" aria-label="Ver artículo sobre Cocha Molina">
+          <img src="https://cdn.semanariolacalle.com/2021/10/WhatsApp-Image-2021-10-08-at-11.25.32-AM.jpeg" alt="Gonzalo Arturo Cocha Molina interpretando su acordeón en tarima" loading="lazy">
+          <span class="maestro-card__sello">El rey del acordeón</span>
+        </a>
+        <div class="maestro-card__texto"><span class="seccion__kicker">Maestría y sentimiento</span><h3>Gonzalo Arturo “Cocha” Molina</h3><p>Rey de Reyes y virtuoso del acordeón, reconocido por convertir cada nota en emoción y acompañar grandes páginas del vallenato.</p></div>
+      </article>
+    </div>
+    <p class="homenaje__nota">Imágenes enlazadas a sus publicaciones de origen. Los créditos y derechos corresponden a sus respectivos autores y medios.</p>
+  </div>
+</section>
+
+<section class="seccion" id="programacion">
+  <div class="contenedor">
+    <div class="seccion__cabecera">
+      <span class="seccion__kicker">Agenda</span>
+      <h2>Programación del festival</h2>
+      <p>CEAD Valledupar · Modalidad híbrida con transmisión por TV UNAD Virtual · 17 al 19 de noviembre de 2026.</p>
+    </div>
+    <div class="dias-tabs">
+      <button class="activo" data-dia="dia1">Día 1 · Martes 17</button>
+      <button data-dia="dia2">Día 2 · Miércoles 18</button>
+      <button data-dia="dia3">Día 3 · Jueves 19</button>
+    </div>
+    <div id="dia1" class="dia-panel activo">
+      <div class="evento-fila"><span class="evento-fila__hora">3:00 pm</span><div><h4>Acreditación e inscripción en sitio</h4><p>Registro de participantes.</p></div><span class="etiqueta etiqueta--academico">Logística</span></div>
+      <div class="evento-fila"><span class="evento-fila__hora">4:00 pm</span><div><h4>Acto de apertura y homenaje a Poncho Zuleta y Cocha Molina</h4><p>Palabras del comité y presentación especial.</p></div><span class="etiqueta etiqueta--homenaje">Homenaje</span></div>
+      <div class="evento-fila"><span class="evento-fila__hora">5:30 pm</span><div><h4>Eliminatorias de acordeón vallenato</h4><p>Primera ronda de participantes.</p></div><span class="etiqueta etiqueta--competencia">Competencia</span></div>
+    </div>
+    <div id="dia2" class="dia-panel">
+      <div class="evento-fila"><span class="evento-fila__hora">2:00 pm</span><div><h4>Taller de composición vallenata</h4><p>Espacio formativo abierto.</p></div><span class="etiqueta etiqueta--academico">Taller</span></div>
+      <div class="evento-fila"><span class="evento-fila__hora">4:00 pm</span><div><h4>Ronda final de canción inédita</h4><p>Composiciones originales seleccionadas.</p></div><span class="etiqueta etiqueta--competencia">Competencia</span></div>
+      <div class="evento-fila"><span class="evento-fila__hora">8:00 pm</span><div><h4>Concierto especial: homenaje a Poncho Zuleta y Cocha Molina</h4><p>Finalistas interpretan clásicos del repertorio de los maestros homenajeados.</p></div><span class="etiqueta etiqueta--homenaje">Homenaje</span></div>
+    </div>
+    <div id="dia3" class="dia-panel">
+      <div class="evento-fila"><span class="evento-fila__hora">3:00 pm</span><div><h4>Gran final de acordeón vallenato</h4><p>Presentación ante el jurado principal.</p></div><span class="etiqueta etiqueta--competencia">Competencia</span></div>
+      <div class="evento-fila"><span class="evento-fila__hora">5:00 pm</span><div><h4>Premiación general</h4><p>Entrega de reconocimientos.</p></div><span class="etiqueta etiqueta--academico">Cierre</span></div>
+    </div>
+  </div>
+</section>
+
+
+<section class="seccion seccion--crema" id="galeria">
+  <div class="contenedor">
+    <div class="seccion__cabecera"><span class="seccion__kicker">Galería del folclor</span><h2>El vallenato se vive, se canta y se siente</h2><p>Acordeones, tarimas y maestros que mantienen viva la tradición. Selecciona una fotografía para consultar su publicación de origen.</p></div>
+    <div class="galeria">
+      <figure><a href="https://portalvallenato.net/2016/12/16/bajando-de-peso-gana-el-folclor-y-el-amor-poncho-zuleta/" target="_blank" rel="noopener noreferrer"><img src="https://portalvallenato.net/wp-content/uploads/2016/12/poncho-zuleta-y-el-cocha-molina-foto-cristian-rodrc3adfuez.jpg" alt="Poncho Zuleta y Cocha Molina compartiendo escenario" loading="lazy"><figcaption>Poncho Zuleta y Cocha Molina <small>Fuente: Portal Vallenato</small></figcaption></a></figure>
+      <figure><a href="https://www.elespectador.com/entretenimiento/musica/poncho-zuleta-y-cocha-molina-presentan-al-mundo-el-juglar-y-el-rey-de-reyes/" target="_blank" rel="noopener noreferrer"><img src="https://cloudfront-us-east-1.images.arcpublishing.com/elespectador/MXMMQKSXNFFPRJWNBVIQBXIE6Y.jpg" alt="Cocha Molina sonriente con su acordeón rojo" loading="lazy"><figcaption>El acordeón protagonista <small>Fuente: El Espectador</small></figcaption></a></figure>
+      <figure><a href="https://semanariolacalle.com/del-acordeon-al-teclado-la-nueva-apuesta-del-cocha-molina-para-preservar-la-musica-vallenata/" target="_blank" rel="noopener noreferrer"><img src="https://cdn.semanariolacalle.com/2021/10/WhatsApp-Image-2021-10-08-at-11.25.32-AM.jpeg" alt="Cocha Molina tocando el acordeón durante un concierto" loading="lazy"><figcaption>Virtuosismo en tarima <small>Fuente: Semanario La Calle</small></figcaption></a></figure>
+      <figure><a href="https://www.tropicanafm.com/2025/cuantos-anos-tiene-poncho-zuleta-asi-lucia-en-sus-inicios-cuando-lanzo-mi-hermano-y-yo-439148.html" target="_blank" rel="noopener noreferrer"><img src="https://www.tropicanafm.com/wp-content/uploads/2025/06/29062025-Poncho-Zuleta.png" alt="Poncho Zuleta cantando acompañado por acordeón" loading="lazy"><figcaption>La fuerza del canto vallenato <small>Fuente: Tropicana</small></figcaption></a></figure>
+    </div>
+  </div>
+</section>
+
+<section class="seccion seccion--crema pasillo-seccion" id="inscripciones">
+  <div class="contenedor">
+    <div class="seccion__cabecera pasillo-intro">
+      <span class="seccion__kicker">Memoria viva del folclor</span>
+      <h2>Un pasillo por la historia del Festival</h2>
+      <p>Recorre las ediciones que han celebrado el acordeón, las voces y las raíces del vallenato en la UNAD. Desliza horizontalmente para avanzar por la galería.</p>
+    </div>
+    <div class="pasillo-escena" aria-label="Pasillo 3D con ediciones anteriores del Festival Vallenato UNAD">
+      <div class="pasillo-pared pasillo-pared--izquierda" aria-hidden="true"></div>
+      <div class="pasillo-pared pasillo-pared--derecha" aria-hidden="true"></div>
+      <div class="pasillo-piso" aria-hidden="true"></div>
+      <div class="pasillo-recorrido" tabindex="0" aria-label="Galería desplazable de ediciones anteriores">
+        <article class="edicion-card edicion-card--sin-foto">
+          <div class="edicion-card__marco"><span class="edicion-card__numero">I</span><span class="edicion-card__sello">2020 · Virtual</span><h3>I Festival Internacional Universitario de Música Vallenata</h3><p>La primera edición: música y tradición desde la academia.</p><a href="https://eventos.unad.edu.co/i-festival-internacional-universitario-de-musica-vallenata" target="_blank" rel="noopener noreferrer">Consultar fuente oficial ↗</a></div>
+        </article>
+        <article class="edicion-card edicion-card--sin-foto">
+          <div class="edicion-card__marco"><span class="edicion-card__numero">II</span><span class="edicion-card__sello">Edición II</span><h3>II Festival Internacional Universitario de Música Vallenata</h3><p>Una edición más en el recorrido de la música vallenata universitaria.</p><span class="edicion-card__enlace-pendiente">Información y enlace oficial por incorporar</span></div>
+        </article>
+        <article class="edicion-card edicion-card--sin-foto">
+          <div class="edicion-card__marco"><span class="edicion-card__numero">III</span><span class="edicion-card__sello">2022 · Virtual</span><h3>III Festival Internacional Universitario de Música Vallenata</h3><p>Homenaje a Rita Fernández Padilla.</p><a href="https://eventos.unad.edu.co/iii-festival-internacional-universitario-de-musica-vallenata-unad" target="_blank" rel="noopener noreferrer">Consultar fuente oficial ↗</a></div>
+        </article>
+        <article class="edicion-card edicion-card--sin-foto">
+          <div class="edicion-card__marco"><span class="edicion-card__numero">IV</span><span class="edicion-card__sello">Edición IV</span><h3>IV Festival Internacional Universitario de Música Vallenata</h3><p>Una edición del festival que reúne música, cultura y comunidad universitaria.</p><span class="edicion-card__enlace-pendiente">Información y enlace oficial por incorporar</span></div>
+        </article>
+        <article class="edicion-card edicion-card--sin-foto">
+          <div class="edicion-card__marco"><span class="edicion-card__numero">V</span><span class="edicion-card__sello">2024 · Homenaje a Silvio Brito</span><h3>V Festival Internacional Universitario de Música Vallenata</h3><p>Edición dedicada al reconocimiento de Silvio Brito.</p><a href="https://eventos.unad.edu.co/v-festival-internacional-universitario-de-musica-vallenata-unad" target="_blank" rel="noopener noreferrer">Ver edición ↗</a></div>
+        </article>
+        <article class="edicion-card edicion-card--sin-foto">
+          <div class="edicion-card__marco"><span class="edicion-card__numero">VI</span><span class="edicion-card__sello">2025 · Homenaje a El Pollo Irra</span><h3>VI Festival Internacional Universitario de Música Vallenata</h3><p>Edición dedicada al homenaje a El Pollo Irra.</p><a href="https://eventos.unad.edu.co/campo-unad/vi-festival-internacional-universitario-de-musica-vallenata-unad" target="_blank" rel="noopener noreferrer">Ver edición ↗</a></div>
+        </article>
+        <article class="edicion-card edicion-card--sin-foto edicion-card--actual">
+          <div class="edicion-card__marco"><span class="edicion-card__numero">VII</span><span class="edicion-card__sello">2026 · Edición actual</span><h3>VII Festival Internacional Universitario de Música Vallenata</h3><p>Homenaje a Poncho Zuleta y Cocha Molina. Del 17 al 19 de noviembre de 2026.</p><a href="#inicio">Explorar la edición actual ↗</a></div>
+        </article>
+      </div>
+      <div class="pasillo-controles"><span>← Desliza para recorrer las ediciones →</span><div class="pasillo-flechas"><button type="button" class="pasillo-flecha" id="pasilloAnterior" aria-label="Edición anterior">←</button><button type="button" class="pasillo-flecha" id="pasilloSiguiente" aria-label="Siguiente edición">→</button></div></div>
+    </div>
+    <p class="pasillo-nota">Las fotografías corresponden a material publicado por la UNAD y el sitio oficial del festival. En las ediciones donde no se encontró una imagen verificable, se muestra el nombre de la edición.</p>
+  </div>
+</section>
+
+<section class="seccion seccion--crema" id="contacto">
+  <div class="contenedor">
+    <div class="seccion__cabecera"><span class="seccion__kicker">Contacto</span><h2>¿Tienes preguntas?</h2></div>
+    <div class="acordeon">
+      <div class="acordeon-item">
+        <button class="acordeon-item__pregunta" aria-expanded="false">¿Quiénes pueden participar en el festival? <span class="acordeon-item__signo">+</span></button>
+        <div class="acordeon-item__respuesta"><p>Estudiantes activos y egresados de instituciones de educación superior colombianas.</p></div>
+      </div>
+      <div class="acordeon-item">
+        <button class="acordeon-item__pregunta" aria-expanded="false">¿Tiene costo la inscripción? <span class="acordeon-item__signo">+</span></button>
+        <div class="acordeon-item__respuesta"><p>No, la inscripción es completamente gratuita.</p></div>
+      </div>
+      <div class="acordeon-item">
+        <button class="acordeon-item__pregunta" aria-expanded="false">¿Dónde será el festival? <span class="acordeon-item__signo">+</span></button>
+        <div class="acordeon-item__respuesta"><p>CEAD Valledupar · Modalidad híbrida con transmisión por TV UNAD Virtual · 17 al 19 de noviembre de 2026.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="pagina-construccion" id="paginaConstruccion" hidden aria-live="polite">
+  <div class="contenedor">
+    <div class="construccion-panel">
+      <div class="acreditacion-lockup" style="justify-content:center;">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Logo_de_la_UNAD.svg" alt="Logotipo de la Universidad Nacional Abierta y a Distancia, UNAD">
+        <div class="acreditacion-lockup__texto" style="text-align:left;">
+          <strong>UNIVERSIDAD NACIONAL ABIERTA Y A DISTANCIA</strong>
+          <span>ACREDITADA EN ALTA CALIDAD</span>
+        </div>
+      </div>
+      <div class="construccion-icono" aria-hidden="true">⚒</div>
+      <span class="construccion-etiqueta">Página en construcción</span>
+      <h1 id="construccionTitulo">Próximamente</h1>
+      <p id="construccionDescripcion">Estamos preparando este espacio para compartir más información, contenidos y novedades del Festival Internacional Universitario de Música Vallenata.</p>
+      <div class="construccion-puntos" aria-hidden="true"><span></span><span></span><span></span></div>
+      <a href="#inicio" class="boton boton--relleno" id="volverInicioConstruccion">Volver al inicio</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+
+<div class="edicion-modal" id="edicionModal" hidden role="dialog" aria-modal="true" aria-labelledby="edicionModalTitulo">
+  <div class="edicion-modal__fondo" data-cerrar-edicion></div>
+  <div class="edicion-modal__ventana" role="document">
+    <header class="em-banner">
+      <button type="button" class="edicion-modal__cerrar" id="cerrarEdicionModal" aria-label="Cerrar ventana">×</button>
+      <h2 class="em-solo-lector" id="edicionModalTitulo"></h2>
+      <!-- BANNER: la imagen se carga desde el campo "banner" de cada edición en script.js (objeto EDICIONES). -->
+      <div class="em-banner__imagen" id="edicionModalBanner"></div>
+    </header>
+    <div class="em-medio">
+      <section class="em-caja" aria-labelledby="emInfoTitulo">
+        <h3 class="em-caja__titulo" id="emInfoTitulo">Información</h3>
+        <dl class="em-datos" id="edicionModalDatos"></dl>
+        <p class="em-detalle" id="edicionModalDetalle"></p>
+        <a class="boton boton--dorado em-enlace" id="edicionModalEnlace" href="#" target="_blank" rel="noopener noreferrer">Consultar fuente oficial ↗</a>
+      </section>
+      <section class="em-caja" aria-labelledby="emVideoTitulo">
+        <h3 class="em-caja__titulo" id="emVideoTitulo">Video</h3>
+        <!-- VIDEO: el reproductor se carga desde el campo "video" de cada edición en script.js (objeto EDICIONES). -->
+        <div class="em-video" id="edicionModalVideo"></div>
+      </section>
+    </div>
+    <section class="em-galeria" aria-label="Fotografías de la edición">
+      <button type="button" class="em-flecha" id="edicionFotosAnterior" aria-label="Fotos anteriores">←</button>
+      <!-- FOTOS: las imágenes se cargan desde el campo "fotos" de cada edición en script.js (objeto EDICIONES). -->
+      <div class="em-galeria__pista" id="edicionModalFotos" tabindex="0" aria-label="Galería de fotografías desplazable"></div>
+      <button type="button" class="em-flecha" id="edicionFotosSiguiente" aria-label="Fotos siguientes">→</button>
+    </section>
+  </div>
+</div>
+
+<footer class="pie">
+  <div class="contenedor pie__grid">
+    <div class="pie__col"><div class="pie__acreditacion"><img class="logo-unad logo-unad--pie" src="https://commons.wikimedia.org/wiki/Special:FilePath/Logo_de_la_UNAD.svg" alt="Logotipo oficial de la UNAD"><span>ACREDITADA EN ALTA CALIDAD</span></div><p>VII Festival Internacional Universitario de Música Vallenata UNAD. Una fiesta para celebrar el legado de Poncho Zuleta y Cocha Molina, y la riqueza del folclor caribeño.</p></div>
+    <div class="pie__col"><h3>Explora</h3><ul><li><a href="#poncho">Homenaje a los maestros</a></li><li><a href="#programacion">Programación</a></li><li><a href="#inscripciones">Ediciones anteriores</a></li><li><a href="#galeria">Galería</a></li></ul></div>
+    <div class="pie__col"><h3>Legal</h3><ul><li><a href="#">Política de tratamiento de datos</a></li><li><a href="#">Política de cookies</a></li></ul></div>
+    <div class="pie__col"><h3>Contacto</h3><ul><li>festival.vallenato@unad.edu.co</li><li>(601) 344 3700</li></ul></div>
+  </div>
+  <div class="pie__inferior contenedor"><p>&copy; 2026 Universidad Nacional Abierta y a Distancia — UNAD.</p><p>Vigilada Mineducación</p></div>
+</footer>
+
+<div class="cookies-banner" id="cookiesBanner" hidden>
+  <div><p><strong>Usamos cookies.</strong> Para el funcionamiento del sitio y mejorar tu experiencia al inscribirte.</p></div>
+  <div class="cookies-banner__acciones">
+    <button class="boton boton--fantasma" id="cookiesRechazar" type="button">Rechazar no esenciales</button>
+    <button class="boton boton--relleno" id="cookiesAceptar" type="button">Aceptar todas</button>
+  </div>
+</div>
+
+<script src="script.js" defer></script>
+</body>
+</html>
