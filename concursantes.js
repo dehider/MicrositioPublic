@@ -41,6 +41,24 @@ document.addEventListener('DOMContentLoaded', function () {
   const contenido = document.getElementById('perfilContenido');
   let categoriaActiva = 'Todas';
 
+  const menuBoton = document.getElementById('menuBoton');
+  const menuPrincipal = document.getElementById('menuPrincipal');
+  if (menuBoton && menuPrincipal) {
+    menuBoton.addEventListener('click', () => {
+      const abierto = menuBoton.getAttribute('aria-expanded') === 'true';
+      menuBoton.setAttribute('aria-expanded', String(!abierto));
+      menuBoton.setAttribute('aria-label', abierto ? 'Abrir menú' : 'Cerrar menú');
+      menuPrincipal.classList.toggle('abierto', !abierto);
+      document.body.classList.toggle('menu-movil-abierto', !abierto);
+    });
+    menuPrincipal.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      menuBoton.setAttribute('aria-expanded','false');
+      menuBoton.setAttribute('aria-label','Abrir menú');
+      menuPrincipal.classList.remove('abierto');
+      document.body.classList.remove('menu-movil-abierto');
+    }));
+  }
+
   const categorias = ['Todas','Acordeoneros','Canción inédita','Voz revelación','Piquería','Pilón Valledupar'];
   categorias.forEach(cat => {
     const b = document.createElement('button');
@@ -206,7 +224,7 @@ document.addEventListener('DOMContentLoaded', function () {
   function cerrarPerfil() { modal.hidden = true; document.body.classList.remove('perfil-modal-abierto'); }
   cerrar.addEventListener('click', cerrarPerfil);
   modal.querySelectorAll('[data-cerrar-perfil]').forEach(el => el.addEventListener('click', cerrarPerfil));
-  document.addEventListener('keydown', e => { if (e.key === 'Escape' && !modal.hidden) cerrarPerfil(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && !modal.hidden) cerrarPerfil(); if (e.key === 'Escape' && menuPrincipal && menuBoton) { menuPrincipal.classList.remove('abierto'); menuBoton.setAttribute('aria-expanded','false'); document.body.classList.remove('menu-movil-abierto'); } });
   busqueda.addEventListener('input', render);
   render();
 });
