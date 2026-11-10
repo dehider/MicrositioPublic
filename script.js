@@ -1,6 +1,24 @@
 document.addEventListener('DOMContentLoaded', function () {
   var menuBoton = document.getElementById('menuBoton'), nav = document.getElementById('menuPrincipal');
-  if (menuBoton && nav) menuBoton.addEventListener('click', function () { nav.classList.toggle('abierto'); });
+  function cerrarMenuMovil() {
+    if (!nav || !menuBoton) return;
+    nav.classList.remove('abierto');
+    document.body.classList.remove('menu-abierto');
+    menuBoton.setAttribute('aria-expanded', 'false');
+    menuBoton.setAttribute('aria-label', 'Abrir menú');
+  }
+  if (menuBoton && nav) {
+    menuBoton.addEventListener('click', function () {
+      var abierto = !nav.classList.contains('abierto');
+      nav.classList.toggle('abierto', abierto);
+      document.body.classList.toggle('menu-abierto', abierto);
+      menuBoton.setAttribute('aria-expanded', abierto ? 'true' : 'false');
+      menuBoton.setAttribute('aria-label', abierto ? 'Cerrar menú' : 'Abrir menú');
+    });
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') cerrarMenuMovil();
+    });
+  }
 
   var navDrop = document.querySelector('.nav-drop'), navDropBoton = document.getElementById('masSeccionesBoton');
   if (navDrop && navDropBoton) {
@@ -94,10 +112,7 @@ document.addEventListener('DOMContentLoaded', function () {
   arriba.addEventListener('click', function(){window.scrollTo({top:0,behavior:'smooth'});});
   // En móvil, cerrar el menú al elegir una sección.
   if(nav) nav.querySelectorAll('a').forEach(function(enlace){
-    enlace.addEventListener('click', function(){nav.classList.remove('abierto'); if(menuBoton) menuBoton.setAttribute('aria-expanded','false');});
-  });
-  if(menuBoton && nav) menuBoton.addEventListener('click', function(){
-    menuBoton.setAttribute('aria-expanded', nav.classList.contains('abierto') ? 'true' : 'false');
+    enlace.addEventListener('click', cerrarMenuMovil);
   });
 
 
