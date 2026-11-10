@@ -11,39 +11,38 @@
 <link rel="stylesheet" href="styles.css">
 </head>
 <body class="pagina-concursantes">
-<header class="cabecera">
+<header class="cabecera concursantes-header">
   <div class="contenedor cabecera__barra">
-    <a href="index.html#inicio" class="marca">
-      <img class="logo-unad" src="https://commons.wikimedia.org/wiki/Special:FilePath/Logo_de_la_UNAD.svg" alt="Logo oficial de la UNAD">
-      <span class="marca__texto"><strong>Festival Vallenato</strong><small>Universitario · VII Edición</small><span class="sello-acreditacion-mini">UNAD · Acreditada en alta calidad</span></span>
+    <a href="index.html#inicio" class="marca concursantes-marca">
+      <span class="festival-emblema" aria-hidden="true">🪗</span>
+      <span class="marca__texto"><strong>VII Festival</strong><small>Internacional Universitario</small><span class="sello-acreditacion-mini">DE MÚSICA VALLENATA · UNAD 2026</span></span>
     </a>
-    <a class="boton boton--relleno concursantes-volver" href="index.html#inicio">← Volver al micrositio</a>
+    <button class="menu-boton" id="menuBoton" aria-expanded="false" aria-controls="menuPrincipal" aria-label="Abrir menú"><span></span><span></span><span></span></button>
+    <nav id="menuPrincipal" class="nav concursantes-nav" aria-label="Navegación principal">
+      <a href="index.html#inicio">Inicio</a>
+      <a href="index.html#poncho">El festival <span aria-hidden="true">⌄</span></a>
+      <a href="index.html#programacion">Programación</a>
+      <a href="concursantes.html" aria-current="page">Concursantes</a>
+      <a href="index.html#noticias">Noticias</a>
+      <a href="index.html#contacto">Contacto</a>
+    </nav>
+    <a class="marca-unad" href="https://www.unad.edu.co/" aria-label="Universidad Nacional Abierta y a Distancia"><img class="logo-unad" src="https://commons.wikimedia.org/wiki/Special:FilePath/Logo_de_la_UNAD.svg" alt="UNAD"></a>
   </div>
 </header>
-<main>
-<section class="concursantes-hero">
-  <div class="contenedor">
-    <span class="seccion__kicker">VII Festival · 2026</span>
-    <h1>Talento que mantiene viva la tradición</h1>
-    <p>Conoce a quienes hacen parte de esta celebración de la música y la cultura vallenata.</p>
-    <div class="concursantes-resumen">
-      <div><strong id="totalConcursantes">29 perfiles</strong><span>Participantes y agrupaciones</span></div>
-      <div><strong>5 categorías</strong><span>Una misma pasión por el vallenato</span></div>
-    </div>
-  </div>
-</section>
+<main class="concursantes-main">
 <section class="seccion concursantes-seccion">
   <div class="contenedor">
-    <div class="seccion__cabecera">
-      <span class="seccion__kicker">Conoce sus historias</span>
-      <h2>Concursantes</h2>
-      <p>Explora los perfiles por categoría o busca un participante por su nombre.</p>
+    <div class="seccion__cabecera concursantes-cabecera">
+      <span class="seccion__kicker">VII Festival Internacional Universitario de Música Vallenata · UNAD 2026</span>
+      <h1>CONCURSANTES</h1>
+      <span class="titulo-acento" aria-hidden="true"></span>
+      <p>Conoce a los talentosos participantes del VII Festival Internacional Universitario de Música Vallenata UNAD 2026.</p>
     </div>
-    <label class="busqueda-concursantes" for="buscarConcursante"><span aria-hidden="true">⌕</span><input id="buscarConcursante" type="search" placeholder="Buscar por nombre, canción o ciudad…" autocomplete="off"></label>
     <div class="filtros-categorias" id="filtrosCategorias" aria-label="Filtrar por categoría"></div>
+    <label class="busqueda-concursantes" for="buscarConcursante"><span aria-hidden="true">⌕</span><input id="buscarConcursante" type="search" placeholder="Buscar por nombre, canción o ciudad..." autocomplete="off"></label>
     <div class="concursantes-grid" id="concursantesGrid" aria-live="polite"></div>
     <p class="sin-resultados" id="sinResultados" hidden>No encontramos perfiles con esos criterios. Prueba otra búsqueda o categoría.</p>
-    <p class="concursantes-fuente">Información organizada a partir del documento <strong>Perfiles.pdf</strong> suministrado para esta sección. Los datos que no aparecen en el documento se dejan sin mostrar; las descripciones se presentan resumidas conservando su contenido.</p>
+    <p class="concursantes-fuente">Información organizada a partir del documento <strong>Perfiles.pdf</strong>. Los datos que no aparecen en el documento se dejan sin mostrar.</p>
   </div>
 </section>
 </main>
