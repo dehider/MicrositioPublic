@@ -168,12 +168,12 @@ document.addEventListener('DOMContentLoaded', function () {
   //  - enlace:   fuente oficial; si queda vacío se usa el enlace de la tarjeta (si lo tiene).
   //  - detalle:  texto opcional; si queda vacío se usa la descripción de la tarjeta.
   var EDICIONES = {
-    'I':   { anio: '2020', fechas: '', sede: '', modalidad: 'Virtual', homenaje: '', banner: '', video: '', fotos: [], enlace: '', detalle: '' },
-    'II':  { anio: '', fechas: '', sede: '', modalidad: '', homenaje: '', banner: '', video: '', fotos: [], enlace: '', detalle: '' },
-    'III': { anio: '2022', fechas: '', sede: '', modalidad: 'Virtual', homenaje: 'Rita Fernández Padilla', banner: '', video: '', fotos: [], enlace: '', detalle: '' },
-    'IV':  { anio: '', fechas: '', sede: '', modalidad: '', homenaje: '', banner: '', video: '', fotos: [], enlace: '', detalle: '' },
-    'V':   { anio: '2024', fechas: '', sede: '', modalidad: '', homenaje: 'Silvio Brito', banner: '', video: '', fotos: [], enlace: '', detalle: '' },
-    'VI':  { anio: '2025', fechas: '', sede: '', modalidad: '', homenaje: 'El Pollo Irra', banner: '', video: '', fotos: [], enlace: '', detalle: '' },
+    'I':   { anio: '2020', fechas: '', sede: '', modalidad: 'Virtual', homenaje: '', banner: 'images/festival-I.png', video: '', fotos: [], enlace: '', detalle: '' },
+    'II':  { anio: '', fechas: '', sede: '', modalidad: '', homenaje: '', banner: 'images/festival-II.png', video: '', fotos: [], enlace: '', detalle: '' },
+    'III': { anio: '2022', fechas: '', sede: '', modalidad: 'Virtual', homenaje: 'Rita Fernández Padilla', banner: 'images/festival-III.png', video: '', fotos: [], enlace: '', detalle: '' },
+    'IV':  { anio: '', fechas: '', sede: '', modalidad: '', homenaje: '', banner: 'images/festival-IV.png', video: '', fotos: [], enlace: '', detalle: '' },
+    'V':   { anio: '2024', fechas: '', sede: '', modalidad: '', homenaje: 'Silvio Brito', banner: 'images/festival-V.png', video: '', fotos: [], enlace: '', detalle: '' },
+    'VI':  { anio: '2025', fechas: '', sede: '', modalidad: '', homenaje: 'El Pollo Irra', banner: 'images/festival-VI.png', video: '', fotos: [], enlace: '', detalle: '' },
     'VII': {
       anio: '2026',
       fechas: '17 al 19 de noviembre de 2026',
@@ -210,10 +210,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function pintarBanner(url, titulo) {
     bannerModal.textContent = '';
-    if (esHttps(url)) {
+    if (esHttps(url) || /^images\/festival-(I|II|III|IV|V|VI)\.png$/i.test(String(url || '').trim())) {
       var img = crear('img');
       img.src = url.trim();
       img.alt = 'Banner de la ' + titulo;
+      img.loading = 'lazy';
       bannerModal.appendChild(img);
     }
   }
