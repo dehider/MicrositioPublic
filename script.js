@@ -169,11 +169,11 @@ document.addEventListener('DOMContentLoaded', function () {
   //  - detalle:  texto opcional; si queda vacío se usa la descripción de la tarjeta.
   var EDICIONES = {
     'I':   { anio: '2020', fechas: '', sede: '', modalidad: 'Virtual', homenaje: '', banner: 'images/I-FESTIVAL.jpg', video: '', fotos: [], enlace: '', detalle: '' },
-    'II':  { anio: '', fechas: '', sede: '', modalidad: '', homenaje: '', banner: 'images/II-FESTIVAL.jpg', video: '', fotos: [], enlace: '', detalle: '' },
-    'III': { anio: '2022', fechas: '', sede: '', modalidad: 'Virtual', homenaje: 'Rita Fernández Padilla', banner: 'images/III-FESTIVAL.jpg', video: '', fotos: [], enlace: '', detalle: '' },
-    'IV':  { anio: '', fechas: '', sede: '', modalidad: '', homenaje: '', banner: 'images/IV-FESTIVAL.jpg', video: '', fotos: [], enlace: '', detalle: '' },
-    'V':   { anio: '2024', fechas: '', sede: '', modalidad: '', homenaje: 'Silvio Brito', banner: 'images/V-FESTIVAL.jpg', video: '', fotos: [], enlace: '', detalle: '' },
-    'VI':  { anio: '2025', fechas: '', sede: '', modalidad: '', homenaje: 'El Pollo Irra', banner: 'images/VI-FESTIVAL.png', video: '', fotos: [], enlace: '', detalle: '' },
+    'II':  { anio: '', fechas: '', sede: '', modalidad: '', homenaje: '', banner: 'images/II-FESTIVAL.jpg', video: 'https://www.youtube.com/embed/FoPTj0aptV0', fotos: [], enlace: '', detalle: '' },
+    'III': { anio: '2022', fechas: '', sede: '', modalidad: 'Virtual', homenaje: 'Rita Fernández Padilla', banner: 'images/III-FESTIVAL.jpg', video: 'https://www.youtube.com/embed/9c56cUg5JlM', fotos: [], enlace: '', detalle: '' },
+    'IV':  { anio: '', fechas: '', sede: '', modalidad: '', homenaje: '', banner: 'images/IV-FESTIVAL.jpg', video: 'https://www.youtube.com/embed/XNdsrA1vLRY', fotos: [], enlace: '', detalle: '' },
+    'V':   { anio: '2024', fechas: '', sede: '', modalidad: '', homenaje: 'Silvio Brito', banner: 'images/V-FESTIVAL.jpg', video: 'https://www.youtube.com/embed/q04_bxr2y9Y', fotos: [], enlace: '', detalle: '' },
+    'VI':  { anio: '2025', fechas: '', sede: '', modalidad: '', homenaje: 'El Pollo Irra', banner: 'images/VI-FESTIVAL.png', video: 'https://www.youtube.com/embed/XNdsrA1vLRY', fotos: [], enlace: '', detalle: '' },
     'VII': {
       anio: '2026',
       fechas: '17 al 19 de noviembre de 2026',
