@@ -169,7 +169,7 @@ document.addEventListener('DOMContentLoaded', function () {
   //  - detalle:  texto opcional; si queda vacío se usa la descripción de la tarjeta.
   var EDICIONES = {
     'I':   { anio: '2020', fechas: '', sede: '', modalidad: 'Virtual', homenaje: '', banner: 'images/I-FESTIVAL.jpg', video: '', fotos: [], enlace: '', detalle: '' },
-    'II':  { anio: '', fechas: '', sede: '', modalidad: '', homenaje: '', banner: 'images/festival-II.png', video: '', fotos: [], enlace: '', detalle: '' },
+    'II':  { anio: '', fechas: '', sede: '', modalidad: '', homenaje: '', banner: 'images/II-FESTIVAL.jpg', video: '', fotos: [], enlace: '', detalle: '' },
     'III': { anio: '2022', fechas: '', sede: '', modalidad: 'Virtual', homenaje: 'Rita Fernández Padilla', banner: 'images/III-FESTIVAL.jpg', video: '', fotos: [], enlace: '', detalle: '' },
     'IV':  { anio: '', fechas: '', sede: '', modalidad: '', homenaje: '', banner: 'images/IV-FESTIVAL.jpg', video: '', fotos: [], enlace: '', detalle: '' },
     'V':   { anio: '2024', fechas: '', sede: '', modalidad: '', homenaje: 'Silvio Brito', banner: 'images/V-FESTIVAL.jpg', video: '', fotos: [], enlace: '', detalle: '' },
@@ -210,7 +210,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function pintarBanner(url, titulo) {
     bannerModal.textContent = '';
-    if (esHttps(url) || /^images\/(I|III|IV|V)-FESTIVAL\.jpg$|^images\/(VI|VII)-FESTIVAL\.png$/i.test(String(url || '').trim())) {
+    if (esHttps(url) || /^images\/(I|II|III|IV|V)-FESTIVAL\.jpg$|^images\/(VI|VII)-FESTIVAL\.png$/i.test(String(url || '').trim())) {
       var img = crear('img');
       img.src = url.trim();
       img.alt = 'Banner de la ' + titulo;
