@@ -81,27 +81,52 @@ document.addEventListener('DOMContentLoaded', function () {
   function render() {
     const q = busqueda.value.trim().toLocaleLowerCase('es');
     const visibles = CONCURSANTES.filter(p => (categoriaActiva === 'Todas' || p.categoria === categoriaActiva) &&
-      [p.nombre,p.artistico,p.categoria,p.cancion,p.ciudad].filter(Boolean).join(' ').toLocaleLowerCase('es').includes(q));
+      [p.nombre,p.artistico,p.categoria,p.cancion,p.canciones,p.ciudad,p.descripcion].filter(Boolean).join(' ').toLocaleLowerCase('es').includes(q));
     grid.textContent = '';
-    visibles.forEach(p => {
-      const card = document.createElement('article'); card.className = 'concursante-card';
-      const foto = crearFoto(p);
-      const cuerpo = document.createElement('div'); cuerpo.className = 'concursante-card__cuerpo';
-      const info = document.createElement('div'); info.className = 'concursante-card__info';
-      const top = document.createElement('div'); top.className = 'concursante-card__top';
-      const tag = document.createElement('span'); tag.className = 'concursante-card__categoria'; tag.textContent = p.categoria;
-      const icon = document.createElement('span'); icon.className = 'concursante-card__icono'; icon.setAttribute('aria-hidden','true');
-      icon.textContent = p.categoria === 'Acordeoneros' ? '🪗' : p.categoria === 'Canción inédita' ? '🎼' : p.categoria === 'Voz revelación' ? '🎤' : p.categoria === 'Piquería' ? '🗣️' : '💃';
-      top.append(tag,icon);
-      const h = document.createElement('h3'); h.textContent = p.nombre;
-      const sub = document.createElement('p'); sub.className = 'concursante-card__sub'; sub.textContent = p.artistico || p.tipo || p.ciudad || 'Participante del VII Festival';
-      const song = document.createElement('p'); song.className = 'concursante-card__cancion'; song.textContent = p.cancion ? '♪ ' + p.cancion : p.canciones ? '♪ ' + p.canciones.split(';')[0] : 'Perfil artístico';
-      const btn = document.createElement('button'); btn.type = 'button'; btn.className = 'concursante-card__ver'; btn.textContent = 'Ver perfil completo →';
-      btn.addEventListener('click', () => abrirPerfil(p));
-      info.append(top,h,sub,song,btn);
-      cuerpo.appendChild(info);
-      if (foto) cuerpo.appendChild(foto);
-      card.appendChild(cuerpo); grid.appendChild(card);
+    const ordenCategorias = categoriaActiva === 'Todas' ? categorias.slice(1) : [categoriaActiva];
+    ordenCategorias.forEach(cat => {
+      const participantes = visibles.filter(p => p.categoria === cat);
+      if (!participantes.length) return;
+      const grupo = document.createElement('section');
+      grupo.className = 'concursantes-grupo';
+      const titulo = document.createElement('h2');
+      titulo.className = 'concursantes-grupo__titulo';
+      const icono = document.createElement('span');
+      icono.setAttribute('aria-hidden','true');
+      icono.textContent = cat === 'Acordeoneros' ? '🪗' : cat === 'Canción inédita' ? '🎼' : cat === 'Voz revelación' ? '🎤' : cat === 'Piquería' ? '🗣️' : '💃';
+      titulo.append(icono, document.createTextNode(cat));
+      const cards = document.createElement('div');
+      cards.className = 'concursantes-grupo__grid';
+      participantes.forEach(p => {
+        const card = document.createElement('article');
+        card.className = 'concursante-card';
+        const foto = crearFoto(p);
+        if (foto) card.appendChild(foto);
+        else card.classList.add('concursante-card--sin-foto');
+        const velo = document.createElement('div');
+        velo.className = 'concursante-card__velo';
+        const tag = document.createElement('span');
+        tag.className = 'concursante-card__categoria';
+        tag.textContent = p.categoria;
+        const h = document.createElement('h3');
+        h.textContent = p.nombre;
+        const sub = document.createElement('p');
+        sub.className = 'concursante-card__sub';
+        sub.textContent = p.artistico || p.tipo || p.ciudad || 'Participante del VII Festival';
+        const song = document.createElement('p');
+        song.className = 'concursante-card__cancion';
+        song.textContent = p.cancion ? '♪ ' + p.cancion : p.canciones ? '♪ ' + p.canciones.split(';')[0] : 'Perfil artístico';
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'concursante-card__ver';
+        btn.textContent = 'Ver perfil completo →';
+        btn.addEventListener('click', () => abrirPerfil(p));
+        velo.append(tag,h,sub,song,btn);
+        card.appendChild(velo);
+        cards.appendChild(card);
+      });
+      grupo.append(titulo,cards);
+      grid.appendChild(grupo);
     });
     contador.textContent = visibles.length + (visibles.length === 1 ? ' perfil' : ' perfiles');
     document.getElementById('sinResultados').hidden = visibles.length !== 0;
@@ -109,20 +134,74 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function abrirPerfil(p) {
     contenido.textContent = '';
-    const foto = crearFoto(p, true); if (foto) contenido.appendChild(foto);
-    const encabezado = document.createElement('div'); encabezado.className = 'perfil-modal__encabezado';
-    const tag = document.createElement('span'); tag.className = 'concursante-card__categoria'; tag.textContent = p.categoria;
-    const h = document.createElement('h2'); h.id = 'perfilTitulo'; h.textContent = p.nombre;
+    const layout = document.createElement('div');
+    layout.className = 'perfil-modal__layout';
+    const texto = document.createElement('div');
+    texto.className = 'perfil-modal__texto';
+    const encabezado = document.createElement('div');
+    encabezado.className = 'perfil-modal__encabezado';
+    const tag = document.createElement('span');
+    tag.className = 'concursante-card__categoria';
+    tag.textContent = p.categoria;
+    const h = document.createElement('h2');
+    h.id = 'perfilTitulo';
+    h.textContent = p.nombre;
     encabezado.append(tag,h);
-    if (p.artistico) { const alias = document.createElement('p'); alias.textContent = 'Nombre artístico: ' + p.artistico; encabezado.appendChild(alias); }
-    contenido.appendChild(encabezado);
-    const campos = [['Edad',p.edad],['Ciudad',p.ciudad],['Estamento',p.estamento],['Programa',p.programa],['Centro',p.centro],['Canción',p.cancion],['Ritmo',p.ritmo],['Autor',p.autor],['Canciones / repertorio',p.canciones],['Tipo',p.tipo]];
-    const dl = document.createElement('dl'); dl.className = 'perfil-modal__datos';
-    campos.forEach(([k,v]) => { if (!v) return; const wrap=document.createElement('div'); const dt=document.createElement('dt');dt.textContent=k;const dd=document.createElement('dd');dd.textContent=v;wrap.append(dt,dd);dl.appendChild(wrap); });
-    contenido.appendChild(dl);
-    const desc = document.createElement('p'); desc.className = 'perfil-modal__descripcion'; desc.textContent = p.descripcion; contenido.appendChild(desc);
-    if (p.nota) { const nota=document.createElement('p');nota.className='perfil-modal__nota';nota.textContent=p.nota;contenido.appendChild(nota); }
-    modal.hidden = false; document.body.classList.add('perfil-modal-abierto'); cerrar.focus();
+    if (p.artistico) {
+      const alias = document.createElement('p');
+      alias.textContent = 'Nombre artístico: ' + p.artistico;
+      encabezado.appendChild(alias);
+    }
+    texto.appendChild(encabezado);
+    const campos = [['Edad',p.edad],['Ciudad',p.ciudad],['Ritmo',p.ritmo],['Canciones / repertorio',p.canciones || p.cancion],['Autor',p.autor],['Programa',p.programa],['Estamento',p.estamento],['Centro',p.centro],['Tipo',p.tipo]];
+    const dl = document.createElement('dl');
+    dl.className = 'perfil-modal__datos';
+    campos.forEach(([k,v]) => {
+      if (!v) return;
+      const wrap=document.createElement('div');
+      const dt=document.createElement('dt'); dt.textContent=k;
+      const dd=document.createElement('dd'); dd.textContent=v;
+      wrap.append(dt,dd); dl.appendChild(wrap);
+    });
+    texto.appendChild(dl);
+    const desc = document.createElement('p');
+    desc.className = 'perfil-modal__descripcion';
+    desc.textContent = p.descripcion;
+    texto.appendChild(desc);
+    if (p.nota) {
+      const nota=document.createElement('p');
+      nota.className='perfil-modal__nota';
+      nota.textContent=p.nota;
+      texto.appendChild(nota);
+    }
+    const foto = crearFoto(p,true);
+    const fotoWrap = document.createElement('div');
+    fotoWrap.className = 'perfil-modal__imagen';
+    if (foto) fotoWrap.appendChild(foto);
+    else fotoWrap.classList.add('perfil-modal__imagen--vacia');
+    layout.append(texto,fotoWrap);
+    contenido.appendChild(layout);
+    const resumen = document.createElement('div');
+    resumen.className = 'perfil-modal__resumen';
+    const datosResumen = [
+      [p.ciudad || p.centro, 'Ubicación'],
+      [p.programa || p.estamento, 'Vínculo UNAD'],
+      [p.cancion || p.categoria, p.cancion ? 'Interpretación' : 'Categoría']
+    ].filter(x => x[0]);
+    datosResumen.forEach(([valor,label],i) => {
+      const item=document.createElement('div');
+      const simbolo=document.createElement('span');
+      simbolo.className='perfil-modal__resumen-icono';
+      simbolo.textContent=['⌖','◇','☆'][i] || '•';
+      const textoItem=document.createElement('span');
+      const strong=document.createElement('strong'); strong.textContent=label;
+      const small=document.createElement('small'); small.textContent=valor;
+      textoItem.append(strong,small); item.append(simbolo,textoItem); resumen.appendChild(item);
+    });
+    if (datosResumen.length) contenido.appendChild(resumen);
+    modal.hidden = false;
+    document.body.classList.add('perfil-modal-abierto');
+    cerrar.focus();
   }
   function cerrarPerfil() { modal.hidden = true; document.body.classList.remove('perfil-modal-abierto'); }
   cerrar.addEventListener('click', cerrarPerfil);
