@@ -723,3 +723,5 @@ body.perfil-modal-abierto{overflow:hidden;}
  .concursante-card h3{font-size:.86rem}
  .perfil-modal__datos{grid-template-columns:1fr}
 }
+
+@media(max-width:760px){body.menu-movil-abierto{overflow:hidden}.concursantes-header .menu-boton{display:flex;position:relative;z-index:1003;flex:0 0 44px;width:44px;height:44px;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.08)}.concursantes-header .menu-boton span{display:block;width:20px;height:2px;margin:3px 0;background:#fff}}
