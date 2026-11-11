@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="styles.css?v=agenda-oficial-20261111">
 </head>
 <body>
 <button class="volver-arriba" id="volverArriba" type="button" aria-label="Volver arriba">↑</button>
@@ -132,32 +132,59 @@
   </div>
 </section>
 
-<section class="seccion" id="programacion">
+<section class="seccion agenda-oficial" id="programacion">
   <div class="contenedor">
     <div class="seccion__cabecera">
-      <span class="seccion__kicker">Agenda</span>
+      <span class="seccion__kicker">Agenda oficial · VII edición</span>
       <h2>Programación del festival</h2>
-      <p>CEAD Valledupar · Modalidad híbrida con transmisión por TV UNAD Virtual · 17 al 19 de noviembre de 2026.</p>
+      <p>Agenda académica, cultural y artística del VII Festival Internacional Universitario de Música Vallenata – UNAD. Las actividades presenciales se desarrollan en el CEAD Valledupar, con transmisión por Facebook Live y TV UNAD Virtual cuando se indica.</p>
     </div>
-    <div class="dias-tabs">
-      <button class="activo" data-dia="dia1">Día 1 · Martes 17</button>
-      <button data-dia="dia2">Día 2 · Miércoles 18</button>
-      <button data-dia="dia3">Día 3 · Jueves 19</button>
+    <div class="agenda-lanzamiento">
+      <div class="agenda-lanzamiento__fecha"><strong>23</strong><span>OCTUBRE · 2026</span></div>
+      <div class="agenda-lanzamiento__contenido">
+        <span class="agenda-etiqueta">Lanzamiento oficial</span>
+        <h3>Lanzamiento del VII Festival Internacional Universitario de Música Vallenata</h3>
+        <p><strong>8:00 a. m.</strong> · Papel de la mujer en la cultura vallenata.</p>
+        <small>CEAD Valledupar · Transmisión vía Facebook Live y TV UNAD Virtual.</small>
+      </div>
     </div>
-    <div id="dia1" class="dia-panel activo">
-      <div class="evento-fila"><span class="evento-fila__hora">3:00 pm</span><div><h4>Acreditación e inscripción en sitio</h4><p>Registro de participantes.</p></div><span class="etiqueta etiqueta--academico">Logística</span></div>
-      <div class="evento-fila"><span class="evento-fila__hora">4:00 pm</span><div><h4>Acto de apertura y homenaje a Poncho Zuleta y Cocha Molina</h4><p>Palabras del comité y presentación especial.</p></div><span class="etiqueta etiqueta--homenaje">Homenaje</span></div>
-      <div class="evento-fila"><span class="evento-fila__hora">5:30 pm</span><div><h4>Eliminatorias de acordeón vallenato</h4><p>Primera ronda de participantes.</p></div><span class="etiqueta etiqueta--competencia">Competencia</span></div>
+    <div class="dias-tabs agenda-tabs" role="tablist" aria-label="Fechas de la programación">
+      <button class="activo" data-dia="dia1" role="tab" aria-selected="true">17 noviembre</button>
+      <button data-dia="dia2" role="tab" aria-selected="false">18 noviembre</button>
+      <button data-dia="dia3" role="tab" aria-selected="false">19 noviembre</button>
     </div>
-    <div id="dia2" class="dia-panel">
-      <div class="evento-fila"><span class="evento-fila__hora">2:00 pm</span><div><h4>Taller de composición vallenata</h4><p>Espacio formativo abierto.</p></div><span class="etiqueta etiqueta--academico">Taller</span></div>
-      <div class="evento-fila"><span class="evento-fila__hora">4:00 pm</span><div><h4>Ronda final de canción inédita</h4><p>Composiciones originales seleccionadas.</p></div><span class="etiqueta etiqueta--competencia">Competencia</span></div>
-      <div class="evento-fila"><span class="evento-fila__hora">8:00 pm</span><div><h4>Concierto especial: homenaje a Poncho Zuleta y Cocha Molina</h4><p>Finalistas interpretan clásicos del repertorio de los maestros homenajeados.</p></div><span class="etiqueta etiqueta--homenaje">Homenaje</span></div>
+
+    <div id="dia1" class="dia-panel activo" role="tabpanel">
+      <div class="agenda-fecha"><span>Martes</span><strong>17 de noviembre de 2026</strong></div>
+      <article class="evento-fila agenda-evento"><time class="evento-fila__hora">7:00 a. m.</time><div><h4>Registro</h4><p>Registro de asistentes y participantes.</p><small>CEAD Valledupar.</small></div><span class="etiqueta etiqueta--academico">Registro</span></article>
+      <article class="evento-fila agenda-evento"><time class="evento-fila__hora">8:00 a. m.</time><div><h4>Acto de instalación</h4><p>Himnos de la República de Colombia y de la Universidad Nacional Abierta y a Distancia – UNAD.</p><p><strong>Palabra de apertura:</strong> Dra. Mardelia Padilla Santamaría, directora UNAD Zona Caribe; Dr. Einar Iván Monroy Gutiérrez, decano ECSAH; Dr. Edgar Guillermo Rodríguez, Vicerrectoría de Servicios a Aspirantes, Estudiantes y Egresados; y Dr. Jaime Alberto Leal, rector UNAD.</p><small>CEAD Valledupar · Transmisión vía Facebook Live y TV UNAD Virtual.</small></div><span class="etiqueta etiqueta--homenaje">Instalación</span></article>
+      <article class="evento-fila agenda-evento"><time class="evento-fila__hora">9:15 a. m.</time><div><h4>Presentación de Conjunto Típico Vallenato</h4><small>CEAD Valledupar · Transmisión vía Facebook Live y TV UNAD Virtual.</small></div><span class="etiqueta etiqueta--homenaje">Presentación</span></article>
+      <article class="evento-fila agenda-evento"><time class="evento-fila__hora">9:40 a. m.</time><div><h4>Conversatorio: Vida y Obra Musical</h4><p>Maestros Tomás Alfonso “Poncho” Zuleta Díaz y Gonzalo Arturo “El Cocha” Molina.</p><p><strong>Presentan:</strong> Iván Ochoa y Aurora Durán.</p><p><strong>Participan:</strong> Gustavo Gutiérrez, Julieth Peraza, José Molina Daza, Ramón Martínez y Álvaro Morón.</p><small>CEAD Valledupar · Transmisión vía Facebook Live y TV UNAD Virtual.</small></div><span class="etiqueta etiqueta--academico">Conversatorio</span></article>
+      <article class="evento-fila agenda-evento"><time class="evento-fila__hora">2:00 p. m.</time><div><h4>Desfile inaugural “El Pilón UNADISTA” y Concurso de Piloneras</h4><p><strong>Presentan:</strong> Rodrigo Rosado e Iván Ochoa.</p><small>CEAD Valledupar · Transmisión vía Facebook Live y TV UNAD Virtual.</small></div><span class="etiqueta etiqueta--competencia">Cultura</span></article>
     </div>
-    <div id="dia3" class="dia-panel">
-      <div class="evento-fila"><span class="evento-fila__hora">3:00 pm</span><div><h4>Gran final de acordeón vallenato</h4><p>Presentación ante el jurado principal.</p></div><span class="etiqueta etiqueta--competencia">Competencia</span></div>
-      <div class="evento-fila"><span class="evento-fila__hora">5:00 pm</span><div><h4>Premiación general</h4><p>Entrega de reconocimientos.</p></div><span class="etiqueta etiqueta--academico">Cierre</span></div>
+
+    <div id="dia2" class="dia-panel" role="tabpanel" hidden>
+      <div class="agenda-fecha"><span>Miércoles</span><strong>18 de noviembre de 2026</strong></div>
+      <article class="evento-fila agenda-evento"><time class="evento-fila__hora">7:00 a. m.</time><div><h4>Registro</h4><small>CEAD Valledupar.</small></div><span class="etiqueta etiqueta--academico">Registro</span></article>
+      <article class="evento-fila agenda-evento"><time class="evento-fila__hora">8:00 a. m.</time><div><h4>Foro Académico: Música del Caribe – “El vallenato: Patrimonio, Cultura, Educación e Innovación”</h4><p><strong>Presenta:</strong> Carlos Liñán Pitre.</p><p><strong>Moderadora:</strong> Martha Viviana Vargas, vicerrectora de Inclusión Social para el Desarrollo Regional y la Proyección Comunitaria.</p><p><strong>Participan:</strong> Carlos Arturo Russo Alfaro, Kandymaku Busintaca, Roger Bermúdez Villamizar y Antonio Giménez Fréite.</p><small>CEAD Valledupar · Transmisión vía Facebook Live y TV UNAD Virtual.</small></div><span class="etiqueta etiqueta--academico">Foro académico</span></article>
+      <article class="evento-fila agenda-evento"><time class="evento-fila__hora">2:00 p. m.</time><div><h4>Ronda eliminatoria de concursos</h4><p><strong>Presentan:</strong> Rodrigo Rosado e Iván Ochoa.</p><p><strong>Categorías:</strong> Canción Inédita, Voz Revelación, Acordeonero y Piqueria.</p><small>CEAD Valledupar · Transmisión vía Facebook Live y TV UNAD Virtual.</small></div><span class="etiqueta etiqueta--competencia">Eliminatorias</span></article>
     </div>
+
+    <div id="dia3" class="dia-panel" role="tabpanel" hidden>
+      <div class="agenda-fecha"><span>Jueves</span><strong>19 de noviembre de 2026</strong></div>
+      <article class="evento-fila agenda-evento"><time class="evento-fila__hora">7:00 a. m.</time><div><h4>Registro</h4><small>CEAD Valledupar.</small></div><span class="etiqueta etiqueta--academico">Registro</span></article>
+      <article class="evento-fila agenda-evento"><time class="evento-fila__hora">8:00 a. m.</time><div><h4>Ronda eliminatoria para las categorías</h4><p><strong>Presentan:</strong> Rodrigo Rosado e Iván Ochoa.</p><p>Acordeoneros, Canción Inédita, Voz Revelación y Piqueria.</p><small>CEAD Valledupar · Transmisión vía Facebook Live y TV UNAD Virtual.</small></div><span class="etiqueta etiqueta--competencia">Eliminatorias</span></article>
+      <article class="evento-fila agenda-evento"><time class="evento-fila__hora">10:30 a. m.</time><div><h4>Final de concurso por categorías</h4><p><strong>Presentan:</strong> Rodrigo Rosado e Iván Ochoa.</p><p>Piquería, Acordeoneros, Canción Inédita y Voz Revelación.</p><small>CEAD Valledupar · Transmisión vía Facebook Live y TV UNAD Virtual.</small></div><span class="etiqueta etiqueta--competencia">Finales</span></article>
+      <article class="evento-fila agenda-evento"><time class="evento-fila__hora">12:00 m.</time><div><h4>Presentación de la Revista Aires Vallenatos</h4><p><strong>Presenta:</strong> Angélica Vides Daza.</p><small>CEAD Valledupar · Transmisión vía Facebook Live y TV UNAD Virtual.</small></div><span class="etiqueta etiqueta--academico">Revista</span></article>
+      <article class="evento-fila agenda-evento"><time class="evento-fila__hora">12:30 p. m.</time><div><h4>Entrega de certificados – Incubadora de Talento UNADISTA</h4><small>CEAD Valledupar · Transmisión vía Facebook Live y TV UNAD Virtual.</small></div><span class="etiqueta etiqueta--academico">Certificación</span></article>
+      <article class="evento-fila agenda-evento agenda-evento--noche"><time class="evento-fila__hora">5:00 p. m.</time><div><h4>Registro para la Noche de Gala UNADISTA</h4><small>CEAD Valledupar.</small></div><span class="etiqueta etiqueta--academico">Registro</span></article>
+      <article class="evento-fila agenda-evento agenda-evento--noche"><time class="evento-fila__hora">6:00 p. m.</time><div><h4>Noche de Gala UNADISTA</h4><p><strong>Presentan:</strong> Aurora Durán e Iván Ochoa.</p><p><strong>Condecoración “Vida y Obra Musical”:</strong> Everardo Armenta Alonso (compositor), Hildmaro Bolaño (acordeonero), Germán Alfredo Calderón (guacharaquero), Álvaro Molina Silva (corista) y Jorge Vizcaíno (fortalecimiento y promoción al folclor vallenato).</p><p><strong>Entregan:</strong> Dr. Edgar Guillermo Rodríguez y Dra. Mardelia Yolima Padilla Santamaría.</p><small>CEAD Valledupar · Transmisión vía Facebook Live y TV UNAD Virtual.</small></div><span class="etiqueta etiqueta--homenaje">Gala</span></article>
+      <article class="evento-fila agenda-evento agenda-evento--noche"><time class="evento-fila__hora">7:15 p. m.</time><div><h4>Presentación musical: Los Legendarios del Vallenato</h4><small>CEAD Valledupar · Transmisión vía Facebook Live y TV UNAD Virtual.</small></div><span class="etiqueta etiqueta--homenaje">Presentación</span></article>
+      <article class="evento-fila agenda-evento agenda-evento--noche"><time class="evento-fila__hora">8:15 p. m.</time><div><h4>Entrega de reconocimiento a los maestros homenajeados</h4><p>Tomás Alfonso “Poncho” Zuleta Díaz y Gonzalo Arturo “El Cocha” Molina.</p><p><strong>Entregan:</strong> Dr. Edgar Guillermo Rodríguez y Dra. Mardelia Yolima Padilla Santamaría.</p><small>CEAD Valledupar · Transmisión vía Facebook Live y TV UNAD Virtual.</small></div><span class="etiqueta etiqueta--homenaje">Reconocimiento</span></article>
+      <article class="evento-fila agenda-evento agenda-evento--noche"><time class="evento-fila__hora">8:50 p. m.</time><div><h4>Presentación musical – Artista vallenato SAYCO</h4><small>CEAD Valledupar · Transmisión vía Facebook Live y TV UNAD Virtual.</small></div><span class="etiqueta etiqueta--homenaje">Presentación</span></article>
+      <article class="evento-fila agenda-evento agenda-evento--noche"><time class="evento-fila__hora">9:40 p. m.</time><div><h4>Entrega de premiación a los ganadores</h4><p><strong>Entregan:</strong> Dr. Edgar Guillermo Rodríguez y Dra. Mardelia Yolima Padilla Santamaría.</p><p><strong>Categorías:</strong> Acordeonero, Canción Inédita, Voz Revelación, Piqueria y Pilonera.</p><small>CEAD Valledupar · Transmisión vía Facebook Live y TV UNAD Virtual.</small></div><span class="etiqueta etiqueta--competencia">Premiación</span></article>
+    </div>
+    <p class="agenda-nota">Programación transcrita de la agenda oficial del festival. Los horarios de las actividades del 19 de noviembre al mediodía se presentan en formato de 12 horas para facilitar su lectura.</p>
   </div>
 </section>
 

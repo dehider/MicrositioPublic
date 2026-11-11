@@ -962,3 +962,39 @@ body.perfil-modal-abierto .concursantes-grupo__grid{grid-template-columns:repeat
  .perfil-modal__foto{max-height:28vh}
  .perfil-modal__datos{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
+
+
+/* Agenda oficial: presentación por fecha y cronograma */
+.agenda-oficial{background:linear-gradient(180deg,#f7f5ef 0%,#fff 100%)}
+.agenda-lanzamiento{display:grid;grid-template-columns:120px 1fr;gap:22px;align-items:center;margin:0 0 30px;padding:22px 26px;border:1px solid rgba(0,55,86,.14);border-left:5px solid #e6ad13;border-radius:14px;background:#fff;box-shadow:0 8px 24px rgba(0,34,56,.07)}
+.agenda-lanzamiento__fecha{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:12px;border-radius:10px;background:#002b49;color:#fff}
+.agenda-lanzamiento__fecha strong{font-family:var(--fuente-cartel);font-size:3rem;line-height:1}
+.agenda-lanzamiento__fecha span{margin-top:8px;color:#ffca37;font-size:.65rem;font-weight:800;letter-spacing:.08em}
+.agenda-lanzamiento__contenido h3{margin:7px 0;color:#092b45;font-size:1.18rem}
+.agenda-lanzamiento__contenido p{margin:5px 0}
+.agenda-lanzamiento__contenido small,.agenda-evento small{display:block;margin-top:8px;color:#66727c;font-size:.82rem;line-height:1.45}
+.agenda-etiqueta{color:#946900;font-size:.7rem;font-weight:900;letter-spacing:.1em;text-transform:uppercase}
+.agenda-tabs{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 22px}
+.agenda-tabs button{width:auto;min-width:150px;border:1px solid #82909c;border-radius:9px;background:transparent;color:#092b45;padding:12px 20px}
+.agenda-tabs button.activo{background:#002b49;border-color:#002b49;color:#fff}
+.agenda-fecha{display:flex;align-items:baseline;gap:12px;margin:12px 0 8px;padding:0 12px 14px;border-bottom:2px solid #e7b21b;color:#0a304c}
+.agenda-fecha span{color:#9b730c;font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em}
+.agenda-fecha strong{font-family:var(--fuente-cartel);font-size:1.45rem}
+.agenda-evento{grid-template-columns:112px minmax(0,1fr) auto;align-items:start;gap:18px;padding:20px 14px;border-bottom:1px solid #dce1e4;border-radius:0}
+.agenda-evento:hover{padding-left:18px;background:#f6f4ee}
+.agenda-evento .evento-fila__hora{padding-top:2px;color:#a67600;font-family:var(--fuente-cartel);font-size:1.12rem;font-weight:800;white-space:nowrap}
+.agenda-evento h4{color:#092b45;font-size:1.02rem;line-height:1.35}
+.agenda-evento p{margin:7px 0 0;color:#344451;font-size:.9rem;line-height:1.55}
+.agenda-evento .etiqueta{margin-top:2px;white-space:nowrap}
+.agenda-nota{margin-top:22px;padding:12px 15px;border-left:3px solid #e5ad12;background:#f6f4ed;color:#59636c;font-size:.82rem;line-height:1.5}
+@media(max-width:760px){
+ .agenda-lanzamiento{grid-template-columns:82px 1fr;gap:14px;padding:16px}
+ .agenda-lanzamiento__fecha strong{font-size:2.35rem}
+ .agenda-lanzamiento__fecha span{font-size:.56rem;text-align:center}
+ .agenda-tabs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
+ .agenda-tabs button{min-width:0;padding:10px 5px;font-size:.78rem}
+ .agenda-evento{grid-template-columns:1fr;gap:6px;padding:16px 10px}
+ .agenda-evento .evento-fila__hora{font-size:1.05rem}
+ .agenda-evento .etiqueta{justify-self:start}
+ .agenda-fecha{flex-direction:column;gap:4px}
+}
