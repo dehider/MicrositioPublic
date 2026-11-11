@@ -1087,3 +1087,16 @@ body.perfil-modal-abierto .concursantes-grupo__grid{grid-template-columns:repeat
   #programacion .agenda-selector{gap:7px}
   #programacion .agenda-selector button{padding:11px 5px;font-size:.82rem}
 }
+
+
+/* Control definitivo de visibilidad de cada día de la agenda */
+#programacion .agenda-dias-completos{display:block!important}
+#programacion .agenda-dias-completos>.dia-panel{display:none!important}
+#programacion .agenda-dias-completos>.dia-panel[hidden]{display:none!important}
+#programacion .agenda-dias-completos>.dia-panel.activo:not([hidden]){display:block!important}
+#programacion .agenda-selector button[aria-selected="true"]{
+  background:#062d49!important;color:#fff!important;border-color:#062d49!important
+}
+#programacion .agenda-selector button[aria-selected="false"]{
+  background:#fff;color:#0a304c
+}

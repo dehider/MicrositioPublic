@@ -49,27 +49,45 @@ document.addEventListener('DOMContentLoaded', function () {
     actualizar(); setInterval(actualizar, 1000);
   }
 
-  document.querySelectorAll('.dias-tabs button').forEach(function (tab) {
-    tab.addEventListener('click', function () {
-      document.querySelectorAll('.dias-tabs button').forEach(function(t){
-        t.classList.remove('activo');
-        t.setAttribute('aria-selected', 'false');
+  // Selector de agenda: solo se muestra el panel del día elegido.
+  var agendaSelector = document.querySelector('#programacion .agenda-selector');
+  if (agendaSelector) {
+    var agendaTabs = agendaSelector.querySelectorAll('button[data-dia]');
+    var agendaPanels = document.querySelectorAll('#programacion .agenda-dias-completos .dia-panel');
+
+    function activarDiaAgenda(tab) {
+      var panelId = tab.getAttribute('data-dia');
+      agendaTabs.forEach(function (item) {
+        var seleccionado = item === tab;
+        item.classList.toggle('activo', seleccionado);
+        item.setAttribute('aria-selected', seleccionado ? 'true' : 'false');
+        item.setAttribute('tabindex', seleccionado ? '0' : '-1');
       });
-      document.querySelectorAll('.dia-panel').forEach(function(p){
-        p.classList.remove('activo');
-        p.hidden = true;
-        p.setAttribute('aria-hidden', 'true');
+      agendaPanels.forEach(function (panel) {
+        var visible = panel.id === panelId;
+        panel.hidden = !visible;
+        panel.classList.toggle('activo', visible);
+        panel.setAttribute('aria-hidden', visible ? 'false' : 'true');
       });
-      tab.classList.add('activo');
-      tab.setAttribute('aria-selected', 'true');
-      var panel = document.getElementById(tab.dataset.dia);
-      if (panel) {
-        panel.hidden = false;
-        panel.removeAttribute('aria-hidden');
-        panel.classList.add('activo');
-      }
+    }
+
+    agendaTabs.forEach(function (tab, index) {
+      tab.addEventListener('click', function () { activarDiaAgenda(tab); });
+      tab.addEventListener('keydown', function (event) {
+        if (event.key === 'ArrowRight' || event.key === 'ArrowLeft') {
+          event.preventDefault();
+          var next = event.key === 'ArrowRight'
+            ? (index + 1) % agendaTabs.length
+            : (index - 1 + agendaTabs.length) % agendaTabs.length;
+          agendaTabs[next].focus();
+          activarDiaAgenda(agendaTabs[next]);
+        }
+      });
     });
-  });
+
+    var diaInicial = agendaSelector.querySelector('button[aria-selected="true"]') || agendaTabs[0];
+    if (diaInicial) activarDiaAgenda(diaInicial);
+  }
 
   document.querySelectorAll('.acordeon-item__pregunta').forEach(function (boton) {
     boton.addEventListener('click', function () {
