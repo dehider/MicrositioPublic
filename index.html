@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=agenda-visible-v2-20261111">
+<link rel="stylesheet" href="styles.css?v=agenda-selector-tabs-20261111">
 </head>
 <body>
 <button class="volver-arriba" id="volverArriba" type="button" aria-label="Volver arriba">↑</button>
@@ -148,8 +148,13 @@
         <small>CEAD Valledupar · Transmisión vía Facebook Live y TV UNAD Virtual.</small>
       </div>
     </div>
+    <div class="dias-tabs agenda-selector" role="tablist" aria-label="Seleccionar día de programación">
+      <button type="button" class="activo" role="tab" aria-selected="true" aria-controls="dia1" data-dia="dia1">17 de noviembre</button>
+      <button type="button" role="tab" aria-selected="false" aria-controls="dia2" data-dia="dia2">18 de noviembre</button>
+      <button type="button" role="tab" aria-selected="false" aria-controls="dia3" data-dia="dia3">19 de noviembre</button>
+    </div>
     <div class="agenda-dias-completos">
-      <section id="dia1" class="agenda-dia-visible" style="display:block!important">
+      <section id="dia1" class="dia-panel activo">
         <div class="agenda-fecha"><span>Martes</span><strong>17 de noviembre de 2026</strong></div>
         <article class="evento-fila agenda-evento"><time class="evento-fila__hora">7:00 a. m.</time><div><h4>Registro</h4><small>CEAD Valledupar.</small></div><span class="etiqueta etiqueta--academico">Registro</span></article>
         <article class="evento-fila agenda-evento"><time class="evento-fila__hora">8:00 a. m.</time><div><h4>Acto de instalación</h4><p>Himnos de la República de Colombia e Himno de la Universidad Nacional Abierta y a Distancia – UNAD.</p><p><strong>Palabra de apertura:</strong></p><ul><li>Dra. Mardelia Padilla Santamaría, directora UNAD Zona Caribe.</li><li>Dr. Einar Iván Monroy Gutiérrez, decano ECSAH.</li><li>Dr. Edgar Guillermo Rodríguez, Vicerrectoría de Servicios a Aspirantes, Estudiantes y Egresados.</li><li>Dr. Jaime Alberto Leal, rector UNAD.</li></ul><small>CEAD Valledupar · Transmisión vía Facebook Live y TV UNAD Virtual.</small></div><span class="etiqueta etiqueta--homenaje">Instalación</span></article>
@@ -158,14 +163,14 @@
         <article class="evento-fila agenda-evento"><time class="evento-fila__hora">2:00 p. m.</time><div><h4>Desfile inaugural “El Pilón UNADISTA” y Concurso de Piloneras</h4><p><strong>Presentan:</strong> Rodrigo Rosado e Iván Ochoa.</p><small>CEAD Valledupar · Transmisión vía Facebook Live y TV UNAD Virtual.</small></div><span class="etiqueta etiqueta--competencia">Cultura</span></article>
       </section>
 
-      <section id="dia2" class="agenda-dia-visible" style="display:block!important">
+      <section id="dia2" class="dia-panel" hidden aria-hidden="true">
         <div class="agenda-fecha"><span>Miércoles</span><strong>18 de noviembre de 2026</strong></div>
         <article class="evento-fila agenda-evento"><time class="evento-fila__hora">7:00 a. m.</time><div><h4>Registro</h4><small>CEAD Valledupar.</small></div><span class="etiqueta etiqueta--academico">Registro</span></article>
         <article class="evento-fila agenda-evento"><time class="evento-fila__hora">8:00 a. m.</time><div><h4>Foro Académico: Música del Caribe – “El vallenato: Patrimonio, Cultura, Educación e Innovación”</h4><p><strong>Presenta:</strong> Carlos Liñán Pitre.</p><p><strong>Moderadora:</strong> Martha Viviana Vargas, vicerrectora de Inclusión Social para el Desarrollo Regional y la Proyección Comunitaria.</p><p><strong>Participan:</strong></p><ul><li>Carlos Arturo Russo Alfaro.</li><li>Kandymaku Busintaca.</li><li>Roger Bermúdez Villamizar.</li><li>Antonio Giménez Fréite.</li></ul><small>CEAD Valledupar · Transmisión vía Facebook Live y TV UNAD Virtual.</small></div><span class="etiqueta etiqueta--academico">Foro académico</span></article>
         <article class="evento-fila agenda-evento"><time class="evento-fila__hora">2:00 p. m.</time><div><h4>Ronda eliminatoria de concursos</h4><p><strong>Presentan:</strong> Rodrigo Rosado e Iván Ochoa.</p><p><strong>Categorías:</strong></p><ul><li>Canción Inédita.</li><li>Voz Revelación.</li><li>Acordeonero.</li><li>Piqueria.</li></ul><small>CEAD Valledupar · Transmisión vía Facebook Live y TV UNAD Virtual.</small></div><span class="etiqueta etiqueta--competencia">Eliminatorias</span></article>
       </section>
 
-      <section id="dia3" class="agenda-dia-visible" style="display:block!important">
+      <section id="dia3" class="dia-panel" hidden aria-hidden="true">
         <div class="agenda-fecha"><span>Jueves</span><strong>19 de noviembre de 2026</strong></div>
         <article class="evento-fila agenda-evento"><time class="evento-fila__hora">7:00 a. m.</time><div><h4>Registro</h4><small>CEAD Valledupar.</small></div><span class="etiqueta etiqueta--academico">Registro</span></article>
         <article class="evento-fila agenda-evento"><time class="evento-fila__hora">8:00 a. m.</time><div><h4>Ronda eliminatoria para las categorías</h4><p><strong>Presentan:</strong> Rodrigo Rosado e Iván Ochoa.</p><p><strong>Categorías:</strong> Acordeoneros, Canción Inédita, Voz Revelación y Piqueria.</p><small>CEAD Valledupar · Transmisión vía Facebook Live y TV UNAD Virtual.</small></div><span class="etiqueta etiqueta--competencia">Eliminatorias</span></article>

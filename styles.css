@@ -1053,3 +1053,37 @@ body.perfil-modal-abierto .concursantes-grupo__grid{grid-template-columns:repeat
   #programacion .agenda-dias-completos{grid-template-columns:1fr;gap:18px}
   #programacion .agenda-dia-visible{padding:12px}
 }
+
+
+/* Selector interactivo: mostrar únicamente el día elegido */
+#programacion .agenda-selector{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:12px;
+  margin:28px 0 18px;
+}
+#programacion .agenda-selector button{
+  border:1px solid #b8c6d0;
+  border-radius:10px;
+  padding:15px 12px;
+  background:#fff;
+  color:#0a304c;
+  font:700 1rem var(--fuente-texto);
+  cursor:pointer;
+  transition:background .2s,color .2s,border-color .2s,transform .2s;
+}
+#programacion .agenda-selector button:hover{border-color:#e5ad12;transform:translateY(-1px)}
+#programacion .agenda-selector button.activo{
+  background:#062d49;
+  border-color:#062d49;
+  color:#fff;
+  box-shadow:0 5px 14px rgba(5,35,58,.16);
+}
+#programacion .agenda-dias-completos{display:block!important}
+#programacion .dia-panel{display:none!important}
+#programacion .dia-panel.activo{display:block!important}
+#programacion .dia-panel .agenda-fecha{margin-top:0}
+@media(max-width:600px){
+  #programacion .agenda-selector{gap:7px}
+  #programacion .agenda-selector button{padding:11px 5px;font-size:.82rem}
+}
