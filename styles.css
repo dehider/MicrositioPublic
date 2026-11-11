@@ -852,3 +852,113 @@ body.perfil-modal-abierto .busqueda-concursantes{max-width:730px}
 @media(max-width:760px){
  body.perfil-modal-abierto .concursantes-seccion>.contenedor{width:100%;max-width:none;padding-left:16px;padding-right:16px}
 }
+
+
+/* ===== Coincidencia visual con la referencia enviada ===== */
+/* Vista de escritorio: listado a la izquierda y perfil superpuesto a la derecha */
+.pagina-concursantes{background:#e5e7e9;color:#142a3e}
+.pagina-concursantes .cabecera{height:104px;min-height:104px;background:#001b31;box-shadow:none}
+.pagina-concursantes .cabecera__barra{height:104px;min-height:104px;max-width:none;width:100%;padding:8px 28px;display:flex;justify-content:space-between}
+.pagina-concursantes .concursantes-marca{gap:10px;min-width:280px}
+.pagina-concursantes .festival-emblema{width:76px;height:76px;margin:0;font-size:3.1rem;filter:none}
+.pagina-concursantes .marca__texto strong{font-family:var(--fuente-cartel);font-size:1.35rem;font-style:italic;line-height:1.05}
+.pagina-concursantes .marca__texto small{font-size:.66rem;letter-spacing:.055em}
+.pagina-concursantes .sello-acreditacion-mini{font-size:.77rem;line-height:1.05;color:#ffb800}
+.pagina-concursantes .concursantes-nav{flex:1;justify-content:center;gap:clamp(16px,2.4vw,42px)}
+.pagina-concursantes .concursantes-nav a{font-size:.91rem;font-weight:500;white-space:nowrap}
+.pagina-concursantes .marca-unad{flex:0 0 100px}
+.pagina-concursantes .logo-unad{width:82px;height:76px}
+.concursantes-main{min-height:calc(100vh - 104px)}
+.concursantes-seccion{min-height:calc(100vh - 104px);padding:34px 0 42px}
+.concursantes-seccion>.contenedor{width:min(96%,1540px);max-width:1540px;padding:0 30px}
+.concursantes-cabecera{margin:0 0 26px;max-width:730px;text-align:left}
+.concursantes-cabecera h1{font-size:clamp(2.2rem,3vw,2.7rem);font-weight:900;letter-spacing:-.04em}
+.concursantes-cabecera .titulo-acento{width:180px;margin:15px 0 20px}
+.concursantes-cabecera p{font-size:1rem;line-height:1.55}
+.filtros-categorias{display:flex;justify-content:flex-start;flex-wrap:wrap;gap:10px;margin:0 0 18px}
+.filtro-categoria{padding:8px 19px;border:1px solid #788795;border-radius:8px;background:rgba(255,255,255,.18);color:#10283c;font-size:.76rem}
+.busqueda-concursantes{display:flex;width:min(100%,730px);max-width:730px;margin:0 0 30px;padding:0 15px;border:1px solid #7e8b96;border-radius:9px;background:rgba(255,255,255,.16);box-shadow:none}
+.concursantes-grid{display:block}
+.concursantes-grupo{margin:0 0 22px}
+.concursantes-grupo__titulo{margin:0 0 12px;font-size:1.12rem}
+.concursantes-grupo__grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.concursante-card{height:205px;min-height:205px;border:1px solid #173a55;border-radius:12px;background:#e9ecee;box-shadow:none}
+.concursante-card:hover{transform:translateY(-2px);box-shadow:0 5px 14px rgba(0,25,45,.12)}
+.concursante-card>img,.concursante-card>.concursante-card__foto{inset:0 0 0 auto;width:48%;height:100%;object-fit:contain;object-position:center bottom;background:#f2f3f4}
+.concursante-card__velo{width:58%;height:100%;padding:16px 12px;background:#e8ebed;border:0;justify-content:flex-start}
+.concursante-card__categoria{padding:5px 9px;font-size:.57rem}
+.concursante-card h3{margin:12px 0 5px;font-size:.88rem;line-height:1.24}
+.concursante-card__sub{font-size:.68rem;line-height:1.3}
+.concursante-card__cancion{font-size:.66rem;line-height:1.3}
+.concursante-card__ver{margin-top:auto;font-size:.65rem}
+.concursantes-fuente{margin-top:26px}
+
+/* Perfil abierto: oscurecimiento leve del fondo y panel blanco a la derecha */
+.perfil-modal{position:fixed;inset:0;z-index:1500;display:flex;align-items:center;justify-content:flex-end;padding:24px 20px;background:rgba(25,35,45,.27);backdrop-filter:blur(1px)}
+.perfil-modal[hidden]{display:none!important}
+.perfil-modal__fondo{position:absolute;inset:0;background:transparent;backdrop-filter:none}
+.perfil-modal__ventana{position:relative;z-index:1;width:min(710px,46vw);max-width:710px;height:auto;max-height:88vh;overflow-y:auto;padding:42px 28px 26px;border:0;border-radius:12px;background:#fff;box-shadow:0 10px 34px rgba(0,0,0,.2)}
+.perfil-modal__cerrar{position:absolute;top:14px;right:14px;width:40px;height:40px;border-radius:50%;background:#001d34;color:#fff;font-size:1.55rem}
+.perfil-modal__layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px;align-items:center}
+.perfil-modal__texto{min-width:0}
+.perfil-modal__encabezado{padding:0}
+.perfil-modal__encabezado .concursante-card__categoria{display:inline-block;padding:9px 14px;font-size:.76rem}
+.perfil-modal__encabezado h2{margin:22px 0 10px;color:#0b3858;font-size:clamp(1.7rem,2.4vw,2.25rem);line-height:1.12;letter-spacing:-.04em}
+.perfil-modal__encabezado p{margin:0;color:#73777d;font-size:.92rem;line-height:1.45}
+.perfil-modal__datos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:28px 0 22px;padding:0}
+.perfil-modal__datos div{min-width:0;padding:13px 13px;border-left:2px solid #f0ae00;border-radius:0 7px 7px 0;background:#f2f4f5}
+.perfil-modal__datos dt{margin:0 0 8px;color:#0a385a;font-size:.68rem;font-weight:800;text-transform:uppercase}
+.perfil-modal__datos dd{margin:0;color:#262d33;font-size:.84rem;line-height:1.4;overflow-wrap:anywhere}
+.perfil-modal__descripcion{margin:24px 0 0;color:#303941;font-size:.82rem;line-height:1.72}
+.perfil-modal__nota{font-size:.8rem;line-height:1.6}
+.perfil-modal__imagen{display:flex;align-items:center;justify-content:center;min-width:0;min-height:300px;align-self:stretch}
+.perfil-modal__foto{display:block;width:100%;max-width:100%;height:auto;max-height:62vh;object-fit:contain;object-position:center bottom;margin:0;border-radius:0;background:#f3f4f5}
+.perfil-modal__resumen{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:30px;padding:16px 18px;border-radius:8px;background:#003858;color:#fff}
+.perfil-modal__resumen>div{display:flex;align-items:center;gap:10px;min-width:0;flex:1}
+.perfil-modal__resumen-icono{font-size:1.55rem;flex:0 0 auto}
+.perfil-modal__resumen strong{display:block;color:#e0eaf0;font-size:.68rem;font-weight:500}
+.perfil-modal__resumen small{display:block;margin-top:3px;color:#fff;font-size:.78rem;line-height:1.3}
+body.perfil-modal-abierto .concursantes-seccion>.contenedor{width:min(53vw,790px);max-width:790px;margin-left:0;margin-right:auto;padding-left:30px;padding-right:12px}
+body.perfil-modal-abierto .concursantes-cabecera{max-width:730px}
+body.perfil-modal-abierto .concursantes-grupo__grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media(max-width:1100px){
+ .pagina-concursantes .cabecera__barra{padding:8px 16px}
+ .pagina-concursantes .concursantes-nav{gap:12px}
+ .pagina-concursantes .concursantes-nav a{font-size:.75rem}
+ .perfil-modal__ventana{width:54vw}
+ body.perfil-modal-abierto .concursantes-seccion>.contenedor{width:46vw}
+ .concursantes-grupo__grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:760px){
+ .pagina-concursantes .cabecera__barra{height:76px;min-height:76px;padding:8px 14px}
+ .pagina-concursantes .festival-emblema{width:48px;height:48px;font-size:1.8rem}
+ .pagina-concursantes .marca__texto strong{font-size:.95rem}
+ .pagina-concursantes .marca__texto small,.pagina-concursantes .sello-acreditacion-mini,.pagina-concursantes .marca-unad{display:none}
+ .pagina-concursantes .concursantes-nav{gap:20px}
+ .concursantes-seccion>.contenedor{width:100%;padding:0 16px}
+ .concursantes-cabecera h1{font-size:2rem}
+ .filtros-categorias{flex-wrap:nowrap;overflow-x:auto;padding:2px 0 9px}
+ .filtro-categoria{flex:0 0 auto}
+ .concursantes-grupo__grid{grid-template-columns:1fr}
+ .concursante-card{height:190px;min-height:190px}
+ .perfil-modal{align-items:flex-end;justify-content:center;padding:8px;background:rgba(25,35,45,.32)}
+ .perfil-modal__ventana{width:100%;max-width:none;max-height:94dvh;padding:52px 16px 16px;border-radius:16px 16px 8px 8px}
+ .perfil-modal__layout{grid-template-columns:minmax(0,1fr) minmax(120px,38%);gap:12px}
+ .perfil-modal__texto{grid-column:1;grid-row:1}
+ .perfil-modal__imagen{grid-column:2;grid-row:1;min-height:160px;max-height:34vh;overflow:hidden}
+ .perfil-modal__foto{max-height:34vh;width:100%;object-fit:contain}
+ .perfil-modal__encabezado h2{font-size:1.35rem;margin:14px 0 7px}
+ .perfil-modal__datos{grid-template-columns:1fr;gap:7px;margin:14px 0}
+ .perfil-modal__datos div{padding:9px}
+ .perfil-modal__descripcion{font-size:.75rem;line-height:1.5}
+ .perfil-modal__resumen{flex-wrap:wrap;gap:10px;margin-top:16px;padding:12px}
+ .perfil-modal__resumen>div{flex:1 1 120px}
+ body.perfil-modal-abierto .concursantes-seccion>.contenedor{width:100%;max-width:none;padding:0 16px}
+}
+@media(max-width:430px){
+ .perfil-modal__layout{grid-template-columns:1fr}
+ .perfil-modal__texto{grid-column:1;grid-row:2}
+ .perfil-modal__imagen{grid-column:1;grid-row:1;max-height:28vh}
+ .perfil-modal__foto{max-height:28vh}
+ .perfil-modal__datos{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
