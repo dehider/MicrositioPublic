@@ -51,10 +51,23 @@ document.addEventListener('DOMContentLoaded', function () {
 
   document.querySelectorAll('.dias-tabs button').forEach(function (tab) {
     tab.addEventListener('click', function () {
-      document.querySelectorAll('.dias-tabs button').forEach(function(t){t.classList.remove('activo');});
-      document.querySelectorAll('.dia-panel').forEach(function(p){p.classList.remove('activo');});
+      document.querySelectorAll('.dias-tabs button').forEach(function(t){
+        t.classList.remove('activo');
+        t.setAttribute('aria-selected', 'false');
+      });
+      document.querySelectorAll('.dia-panel').forEach(function(p){
+        p.classList.remove('activo');
+        p.hidden = true;
+        p.setAttribute('aria-hidden', 'true');
+      });
       tab.classList.add('activo');
-      document.getElementById(tab.dataset.dia).classList.add('activo');
+      tab.setAttribute('aria-selected', 'true');
+      var panel = document.getElementById(tab.dataset.dia);
+      if (panel) {
+        panel.hidden = false;
+        panel.removeAttribute('aria-hidden');
+        panel.classList.add('activo');
+      }
     });
   });
 
