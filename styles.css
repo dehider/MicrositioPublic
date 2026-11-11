@@ -998,3 +998,12 @@ body.perfil-modal-abierto .concursantes-grupo__grid{grid-template-columns:repeat
  .agenda-evento .etiqueta{justify-self:start}
  .agenda-fecha{flex-direction:column;gap:4px}
 }
+
+/* Mostrar simultáneamente las agendas completas de los tres días */
+.agenda-dias-completos{display:flex;flex-direction:column;gap:38px}
+.agenda-dia-visible{display:block!important;visibility:visible!important;opacity:1!important}
+.agenda-dia-visible[hidden]{display:block!important}
+.agenda-dia-visible .agenda-fecha{margin-top:18px}
+.agenda-evento ul{margin:8px 0 0 18px;padding:0;color:#344451;font-size:.88rem;line-height:1.55}
+.agenda-evento ul li{margin:3px 0}
+.agenda-evento time small{display:block;font-family:inherit;font-size:.65rem;white-space:normal}
