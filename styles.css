@@ -1007,3 +1007,49 @@ body.perfil-modal-abierto .concursantes-grupo__grid{grid-template-columns:repeat
 .agenda-evento ul{margin:8px 0 0 18px;padding:0;color:#344451;font-size:.88rem;line-height:1.55}
 .agenda-evento ul li{margin:3px 0}
 .agenda-evento time small{display:block;font-family:inherit;font-size:.65rem;white-space:normal}
+
+
+/* Agenda en tres columnas paralelas dentro del mismo contenedor */
+#programacion .agenda-dias-completos{
+  display:grid!important;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  align-items:start;
+  gap:20px;
+  width:100%;
+}
+#programacion .agenda-dia-visible{
+  display:block!important;
+  min-width:0;
+  padding:14px 12px 18px;
+  background:rgba(255,255,255,.94);
+  border:1px solid #dce3e8;
+  border-top:4px solid #e5ad12;
+  border-radius:14px;
+  box-shadow:0 8px 24px rgba(5,35,58,.07);
+}
+#programacion .agenda-dia-visible .agenda-fecha{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:5px;
+  margin:0 0 8px;
+  padding:4px 4px 13px;
+}
+#programacion .agenda-dia-visible .agenda-fecha strong{font-size:1.18rem;line-height:1.25}
+#programacion .agenda-evento{
+  grid-template-columns:1fr;
+  gap:7px;
+  padding:14px 5px;
+}
+#programacion .agenda-evento .evento-fila__hora{font-size:1.02rem;white-space:normal}
+#programacion .agenda-evento h4{font-size:.94rem}
+#programacion .agenda-evento p,
+#programacion .agenda-evento ul{font-size:.82rem;line-height:1.48}
+#programacion .agenda-evento .etiqueta{justify-self:start;white-space:normal}
+@media(max-width:1050px){
+  #programacion .agenda-dias-completos{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:680px){
+  #programacion .agenda-dias-completos{grid-template-columns:1fr;gap:18px}
+  #programacion .agenda-dia-visible{padding:12px}
+}
