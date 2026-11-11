@@ -841,3 +841,14 @@ body.perfil-modal-abierto{overflow:hidden;}
  .perfil-modal__foto{max-height:30vh}
  .perfil-modal__datos{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
+
+
+/* Ajuste de composición: listado a la izquierda y perfil activo a la derecha */
+.concursantes-grid{display:block}
+.concursantes-grupo{margin:0 0 24px}
+body.perfil-modal-abierto .concursantes-seccion>.contenedor{width:min(790px,53vw);max-width:790px;margin-left:0;margin-right:auto;padding-right:14px}
+body.perfil-modal-abierto .concursantes-cabecera{max-width:740px}
+body.perfil-modal-abierto .busqueda-concursantes{max-width:730px}
+@media(max-width:760px){
+ body.perfil-modal-abierto .concursantes-seccion>.contenedor{width:100%;max-width:none;padding-left:16px;padding-right:16px}
+}
