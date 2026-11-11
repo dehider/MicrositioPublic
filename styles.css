@@ -1131,3 +1131,41 @@ body.perfil-modal-abierto .concursantes-grupo__grid{grid-template-columns:repeat
   #programacion .agenda-evento{padding-top:42px}
   #programacion .agenda-evento>.etiqueta{right:9px;top:9px}
 }
+
+
+/* Etiquetas de agenda en línea con el título de cada actividad */
+#programacion .agenda-evento{
+  grid-template-columns:112px minmax(0,1fr);
+  padding-top:20px;
+}
+#programacion .agenda-evento>.etiqueta{position:static}
+#programacion .agenda-evento__titulo{
+  display:flex;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:7px 11px;
+  min-width:0;
+  margin:0 0 5px;
+}
+#programacion .agenda-evento__titulo h4{margin:0}
+#programacion .agenda-evento__titulo .etiqueta{
+  position:static;
+  display:inline-flex;
+  align-items:center;
+  min-height:22px;
+  padding:3px 9px;
+  margin:0;
+  border:1px solid currentColor;
+  border-radius:999px;
+  background:#fff;
+  font-size:.68rem;
+  font-weight:700;
+  line-height:1.2;
+  white-space:nowrap;
+  box-shadow:none;
+}
+#programacion .agenda-evento>div{min-width:0}
+@media(max-width:760px){
+  #programacion .agenda-evento{grid-template-columns:1fr;padding-top:16px}
+  #programacion .agenda-evento__titulo{gap:6px 9px}
+}
