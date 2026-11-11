@@ -1100,3 +1100,34 @@ body.perfil-modal-abierto .concursantes-grupo__grid{grid-template-columns:repeat
 #programacion .agenda-selector button[aria-selected="false"]{
   background:#fff;color:#0a304c
 }
+
+
+/* Etiquetas de actividad ubicadas en el borde superior derecho de cada tarjeta */
+#programacion .agenda-evento{
+  position:relative;
+  padding-top:42px;
+}
+#programacion .agenda-evento>.etiqueta{
+  position:absolute;
+  top:10px;
+  right:12px;
+  z-index:1;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:24px;
+  padding:4px 11px;
+  margin:0;
+  border:1px solid currentColor;
+  border-radius:999px;
+  background:#fff;
+  font-size:.72rem;
+  font-weight:700;
+  line-height:1.2;
+  box-shadow:0 2px 6px rgba(5,35,58,.07);
+}
+#programacion .agenda-evento>div{min-width:0}
+@media(max-width:600px){
+  #programacion .agenda-evento{padding-top:42px}
+  #programacion .agenda-evento>.etiqueta{right:9px;top:9px}
+}
