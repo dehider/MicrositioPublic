@@ -1169,3 +1169,12 @@ body.perfil-modal-abierto .concursantes-grupo__grid{grid-template-columns:repeat
   #programacion .agenda-evento{grid-template-columns:1fr;padding-top:16px}
   #programacion .agenda-evento__titulo{gap:6px 9px}
 }
+
+
+/* Tarjetas de versiones anteriores: mostrar únicamente el título del festival */
+.pasillo-recorrido .edicion-card__marco{justify-content:center;align-items:center;text-align:center}
+.pasillo-recorrido .edicion-card__numero,
+.pasillo-recorrido .edicion-card__sello,
+.pasillo-recorrido .edicion-card__marco p,
+.pasillo-recorrido .edicion-card__marco a{display:none!important}
+.pasillo-recorrido .edicion-card__marco h3{margin:0;max-width:95%;font-size:clamp(1.15rem,2vw,1.55rem);line-height:1.2;text-shadow:0 2px 8px rgba(0,0,0,.55)}
