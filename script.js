@@ -199,19 +199,88 @@ document.addEventListener('DOMContentLoaded', function () {
   //  - enlace:   fuente oficial; si queda vacío se usa el enlace de la tarjeta (si lo tiene).
   //  - detalle:  texto opcional; si queda vacío se usa la descripción de la tarjeta.
   var EDICIONES = {
-    'I':   { anio: '2020', fechas: '', sede: '', modalidad: 'Virtual', homenaje: '', banner: 'images/I-FESTIVAL.jpg', video: '', fotos: [], enlace: '', detalle: '' },
-    'II':  { anio: '', fechas: '', sede: '', modalidad: '', homenaje: '', banner: 'images/II-FESTIVAL.jpg', video: 'https://www.youtube.com/embed/FoPTj0aptV0', fotos: [], enlace: '', detalle: '' },
-    'III': { anio: '2022', fechas: '', sede: '', modalidad: 'Virtual', homenaje: 'Rita Fernández Padilla', banner: 'images/III-FESTIVAL.jpg', video: 'https://www.youtube.com/embed/9c56cUg5JlM', fotos: [], enlace: '', detalle: '' },
-    'IV':  { anio: '', fechas: '', sede: '', modalidad: '', homenaje: '', banner: 'images/IV-FESTIVAL.jpg', video: 'https://www.youtube.com/embed/XNdsrA1vLRY', fotos: [], enlace: '', detalle: '' },
-    'V':   { anio: '2024', fechas: '', sede: '', modalidad: '', homenaje: 'Silvio Brito', banner: 'images/V-FESTIVAL.jpg', video: 'https://www.youtube.com/embed/q04_bxr2y9Y', fotos: [], enlace: '', detalle: '' },
-    'VI':  { anio: '2025', fechas: '', sede: '', modalidad: '', homenaje: 'El Pollo Irra', banner: 'images/VI-FESTIVAL.png', video: 'https://www.youtube.com/embed/XNdsrA1vLRY', fotos: [], enlace: '', detalle: '' },
+    'I': {
+      anio: '2020',
+      fechas: '3 al 5 de diciembre de 2020',
+      sede: 'Virtual',
+      modalidad: 'Virtual, con transmisión por YouTube',
+      homenaje: 'No se registra un homenaje específico en la ficha institucional consultada',
+      banner: 'images/I-FESTIVAL.jpg',
+      video: '',
+      fotos: [],
+      enlace: 'https://eventos.unad.edu.co/i-festival-internacional-universitario-de-musica-vallenata',
+      detalle: 'Primera edición del Festival, nacida desde la academia para contribuir al rescate de la tradición, las leyendas, la música y la identidad cultural de la región Caribe. Promovió expresiones como acordeón, canto, versos, coplas, décimas y piquería.'
+    },
+    'II': {
+      anio: '2021',
+      fechas: '25 al 27 de noviembre de 2021',
+      sede: 'Virtual · YouTube',
+      modalidad: 'Virtual',
+      homenaje: 'Maestro Emilio Oviedo Corrales',
+      banner: 'images/II-FESTIVAL.jpg',
+      video: 'https://www.youtube.com/embed/FoPTj0aptV0',
+      fotos: [],
+      enlace: 'https://www.youtube.com/watch?v=FoPTj0aptV0',
+      detalle: 'La segunda edición continuó el propósito de promover la música vallenata desde el ámbito universitario. El material audiovisual de esta edición anuncia la programación del 25 al 27 de noviembre y el homenaje al maestro Emilio Oviedo Corrales.'
+    },
+    'III': {
+      anio: '2022',
+      fechas: '17 al 19 de noviembre de 2022',
+      sede: 'YouTube',
+      modalidad: 'Virtual',
+      homenaje: 'Maestra Rita Fernández Padilla',
+      banner: 'images/III-FESTIVAL.jpg',
+      video: 'https://www.youtube.com/embed/9c56cUg5JlM',
+      fotos: [],
+      enlace: 'https://eventos.unad.edu.co/iii-festival-internacional-universitario-de-musica-vallenata-unad',
+      detalle: 'La tercera edición rindió homenaje a la compositora Rita Fernández Padilla. La programación convocó concursos de acordeoneros, canción inédita, voz revelación vallenata, piquería y piloneras.'
+    },
+    'IV': {
+      anio: '2023',
+      fechas: '4 al 6 de diciembre de 2023',
+      sede: 'Casa de la Cultura Cecilia Caballero de López, Valledupar, Cesar',
+      modalidad: 'Presencial, con transmisiones por YouTube',
+      homenaje: 'Maestro Gustavo Gutiérrez Cabello',
+      banner: 'images/IV-FESTIVAL.jpg',
+      video: 'https://www.youtube.com/embed/XNdsrA1vLRY',
+      fotos: [],
+      enlace: 'https://eventos.unad.edu.co/iv-festival-internacional-universitario-de-musica-vallenata-unad',
+      detalle: 'La cuarta edición rindió homenaje a Gustavo Gutiérrez Cabello, reconocido como pionero del vallenato lírico. Fue organizada por VISAE, el Sistema de Bienestar Integral Unadista y la Zona Caribe.'
+    },
+    'V': {
+      anio: '2024',
+      fechas: '28 al 30 de noviembre de 2024',
+      sede: 'CEAD Valledupar',
+      modalidad: 'Presencial, con transmisiones por YouTube',
+      homenaje: 'Maestro Silvio de Jesús Brito Medina',
+      banner: 'images/V-FESTIVAL.jpg',
+      video: 'https://www.youtube.com/embed/q04_bxr2y9Y',
+      fotos: [],
+      enlace: 'https://eventos.unad.edu.co/campo-unad/v-festival-internacional-universitario-de-musica-vallenata-unad',
+      detalle: 'La quinta edición reconoció al maestro Silvio Brito Medina, conocido como “La Voz Más Clara del Vallenato”. La programación se desarrolló durante tres jornadas en el CEAD Valledupar.'
+    },
+    'VI': {
+      anio: '2025',
+      fechas: '9 al 11 de diciembre de 2025',
+      sede: 'Presencial y virtual',
+      modalidad: 'Híbrida',
+      homenaje: 'Maestro Israel Romero Ospino, “El Pollo Irra”',
+      banner: 'images/VI-FESTIVAL.png',
+      video: 'https://www.youtube.com/embed/XNdsrA1vLRY',
+      fotos: [],
+      enlace: 'https://eventos.unad.edu.co/coworking-and-business-de-emprendimiento/vi-festival-internacional-universitario-de-musica-vallenata-unad',
+      detalle: 'La sexta edición rindió homenaje a Israel Romero Ospino, acordeonero y referente del Binomio de Oro de América. Se realizó en modalidad presencial y virtual, con tres días de programación.'
+    },
     'VII': {
       anio: '2026',
       fechas: '17 al 19 de noviembre de 2026',
       sede: 'CEAD Valledupar',
       modalidad: 'Híbrida, con transmisión por TV UNAD Virtual',
       homenaje: 'Poncho Zuleta y Cocha Molina',
-      banner: 'images/VII-FESTIVAL.png', video: '', fotos: [], enlace: '',
+      banner: 'images/VII-FESTIVAL.png',
+      video: '',
+      fotos: [],
+      enlace: '',
       detalle: 'Tres días de acordeón, canción inédita y piquería, con actividades académicas y conciertos en torno al legado de los maestros homenajeados.'
     }
   };
