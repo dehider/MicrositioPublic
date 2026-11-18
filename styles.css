@@ -1319,3 +1319,17 @@ header.top .brand{display:flex;align-items:center;gap:14px;min-height:116px}
   header.top .brand img{width:92px!important;height:78px!important}
   header.top .brand{min-height:88px;gap:8px;font-size:.9rem}
 }
+
+/* Franja de acreditaciones: usar exclusivamente los artes oficiales del repositorio */
+.unad-footer__certs{background:#fff;padding:28px 22px 34px}
+.unad-footer__certs-inner{
+  max-width:1300px;margin:0 auto;min-height:112px;
+  display:flex;align-items:center;justify-content:center;gap:34px;
+}
+.unad-footer__certs-inner img{display:block;object-fit:contain;height:auto;max-height:112px}
+.unad-footer__mineducacion{width:min(58%,760px);max-height:100px!important}
+.unad-footer__certificaciones{width:min(42%,520px);max-height:112px!important}
+@media(max-width:700px){
+ .unad-footer__certs-inner{flex-direction:column;gap:18px;padding:8px 0}
+ .unad-footer__certs-inner img{width:min(100%,520px);max-height:100px!important}
+}
