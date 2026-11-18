@@ -1307,3 +1307,15 @@ body.perfil-modal-abierto .concursantes-grupo__grid{grid-template-columns:repeat
   .unad-footer__brandmark{justify-content:center}
   .unad-footer__brandmark img{width:100px!important;height:90px!important}
 }
+
+/* Logotipo ampliado también en las páginas con encabezado compacto */
+header.top .brand img{
+  width:128px!important;height:104px!important;max-width:34vw;
+  object-fit:contain!important;padding:4px;background:#fff;border-radius:10px;
+  vertical-align:middle;margin-right:16px!important;
+}
+header.top .brand{display:flex;align-items:center;gap:14px;min-height:116px}
+@media(max-width:560px){
+  header.top .brand img{width:92px!important;height:78px!important}
+  header.top .brand{min-height:88px;gap:8px;font-size:.9rem}
+}
