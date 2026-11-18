@@ -206,7 +206,7 @@ document.addEventListener('DOMContentLoaded', function () {
       modalidad: 'Virtual, con transmisión por YouTube',
       homenaje: 'No se registra un homenaje específico en la ficha institucional consultada',
       banner: 'images/I-FESTIVAL.jpg',
-      video: '',
+      video: 'https://www.youtube-nocookie.com/embed/We4xNaYXO2U',
       fotos: [],
       enlace: 'https://eventos.unad.edu.co/i-festival-internacional-universitario-de-musica-vallenata',
       detalle: 'Primera edición del Festival, nacida desde la academia para contribuir al rescate de la tradición, las leyendas, la música y la identidad cultural de la región Caribe. Promovió expresiones como acordeón, canto, versos, coplas, décimas y piquería.'
