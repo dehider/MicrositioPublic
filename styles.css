@@ -1344,3 +1344,43 @@ header.top .brand{display:flex;align-items:center;gap:14px;min-height:116px}
  .unad-footer__certs-inner{gap:7px}
  .unad-footer__certs-inner img{max-height:48px!important}
 }
+
+
+/* Logo UNAD más grande sin aumentar la altura de la barra de navegación */
+.cabecera__barra{
+  min-height:76px!important;
+  height:76px;
+  padding:6px 24px!important;
+  align-items:center;
+}
+.cabecera__barra .marca{
+  position:relative;
+  min-height:64px;
+  padding-left:126px;
+  display:flex;
+  align-items:center;
+}
+.cabecera__barra .logo-unad{
+  position:absolute;
+  left:0;
+  top:50%;
+  transform:translateY(-50%);
+  width:118px!important;
+  height:104px!important;
+  max-width:none!important;
+  object-fit:contain!important;
+  padding:0;
+  background:transparent;
+  border-radius:0;
+  z-index:2;
+}
+@media(max-width:900px){
+  .cabecera__barra{height:72px;min-height:72px!important;padding:5px 16px!important}
+  .cabecera__barra .marca{min-height:60px;padding-left:98px}
+  .cabecera__barra .logo-unad{width:94px!important;height:84px!important}
+}
+@media(max-width:560px){
+  .cabecera__barra{height:66px;min-height:66px!important;padding:4px 12px!important}
+  .cabecera__barra .marca{min-height:56px;padding-left:78px}
+  .cabecera__barra .logo-unad{width:76px!important;height:70px!important}
+}
