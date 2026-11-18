@@ -1320,16 +1320,27 @@ header.top .brand{display:flex;align-items:center;gap:14px;min-height:116px}
   header.top .brand{min-height:88px;gap:8px;font-size:.9rem}
 }
 
-/* Franja de acreditaciones: usar exclusivamente los artes oficiales del repositorio */
-.unad-footer__certs{background:#fff;padding:28px 22px 34px}
+/* Franja de acreditaciones: imágenes compactas en una sola fila */
+.unad-footer__certs{background:#fff;padding:18px 20px 22px}
 .unad-footer__certs-inner{
-  max-width:1300px;margin:0 auto;min-height:112px;
-  display:flex;align-items:center;justify-content:center;gap:34px;
+  max-width:1050px;margin:0 auto;min-height:86px;
+  display:flex;flex-direction:row;flex-wrap:nowrap;
+  align-items:center;justify-content:center;gap:26px;
 }
-.unad-footer__certs-inner img{display:block;object-fit:contain;height:auto;max-height:112px}
-.unad-footer__mineducacion{width:min(58%,760px);max-height:100px!important}
-.unad-footer__certificaciones{width:min(42%,520px);max-height:112px!important}
+.unad-footer__certs-inner img{
+  display:block;object-fit:contain;height:auto;
+  max-height:78px;width:auto;flex:0 1 auto;
+}
+.unad-footer__mineducacion{width: min(48%, 480px);max-height:72px!important}
+.unad-footer__certificaciones{width:min(38%, 380px);max-height:78px!important}
 @media(max-width:700px){
- .unad-footer__certs-inner{flex-direction:column;gap:18px;padding:8px 0}
- .unad-footer__certs-inner img{width:min(100%,520px);max-height:100px!important}
+ .unad-footer__certs{padding:14px 10px 18px}
+ .unad-footer__certs-inner{flex-direction:row;flex-wrap:nowrap;gap:12px;min-height:66px}
+ .unad-footer__certs-inner img{max-height:58px!important;min-width:0}
+ .unad-footer__mineducacion{width:50%}
+ .unad-footer__certificaciones{width:42%}
+}
+@media(max-width:380px){
+ .unad-footer__certs-inner{gap:7px}
+ .unad-footer__certs-inner img{max-height:48px!important}
 }
