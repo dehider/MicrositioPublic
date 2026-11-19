@@ -1384,3 +1384,148 @@ header.top .brand{display:flex;align-items:center;gap:14px;min-height:116px}
   .cabecera__barra .marca{min-height:56px;padding-left:78px}
   .cabecera__barra .logo-unad{width:76px!important;height:70px!important}
 }
+
+
+/* =========================================================
+   RESPONSIVE GLOBAL — escritorio, portátil, tableta y móvil
+   ========================================================= */
+:root{scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:border-box}
+html{width:100%;max-width:100%;overflow-x:clip;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{width:100%;max-width:100%;min-width:320px;margin:0;overflow-x:clip}
+img,svg,video,canvas,iframe{max-width:100%}
+img,video{height:auto}
+iframe{border:0}
+button,input,select,textarea{max-width:100%;font:inherit}
+h1,h2,h3,h4,p,li,a,button{overflow-wrap:anywhere}
+.contenedor{width:100%;max-width:1180px;margin-inline:auto;padding-inline:clamp(14px,2.5vw,24px)}
+main,section,article,header,footer,nav{min-width:0}
+.rejilla--3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.rejilla--2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.galeria{grid-template-columns:repeat(4,minmax(0,1fr))}
+.comite-grid,.invitados-grid,.group-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(14px,2vw,26px)}
+.comite-grid>*,.invitados-grid>*,.group-grid>*,.rejilla>*{min-width:0}
+.cabecera{width:100%;max-width:100%}
+.cabecera__barra{width:100%;max-width:1600px;min-height:76px;height:auto;padding:6px clamp(12px,2.2vw,24px);gap:clamp(10px,1.5vw,20px)}
+.cabecera__barra .marca{min-width:0;max-width:100%}
+.cabecera__barra .nav{min-width:0;flex-wrap:wrap;justify-content:flex-end;gap:clamp(8px,1.2vw,18px)}
+.nav a,.nav-drop__disparador{font-size:clamp(.76rem,.9vw,.94rem)}
+.heroe{min-height:clamp(520px,72svh,820px);height:auto;background-size:cover;background-position:center}
+.heroe__contenido{width:min(100%,820px)}
+.seccion{padding-block:clamp(42px,6vw,82px)}
+.pasillo-escena,.pasillo-recorrido{max-width:100%}
+.pasillo-recorrido{overscroll-behavior-x:contain}
+.edicion-modal__ventana,.perfil-modal__ventana{width:min( min(960px, calc(100vw - 32px)), 100%);max-width:calc(100vw - 32px)}
+.perfil-modal__layout>*{min-width:0}
+.concursantes-seccion>.contenedor{width:100%;max-width:1540px;padding-inline:clamp(14px,2.2vw,30px)}
+.concursantes-grid,.concursantes-grupo__grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+.concursante-card{min-width:0}
+.unad-footer{width:100%;max-width:100%;overflow:hidden}
+.unad-footer__grid{width:100%;min-width:0}
+.unad-footer__column,.unad-footer__contact,.unad-footer__brand{min-width:0}
+.unad-footer__column h2,.unad-footer__contact h2{white-space:normal;overflow-wrap:normal}
+.unad-footer__certs-inner{min-width:0}
+.unad-footer__certs-inner img{max-width:100%;height:auto}
+.unad-footer__bottom{padding-inline:clamp(14px,3vw,32px)}
+.unad-footer__access{left:clamp(8px,1vw,14px)}
+.unad-footer__help{right:clamp(8px,1vw,22px)}
+.agenda-evento,.evento-fila,.agenda-lanzamiento{min-width:0}
+.agenda-evento>* ,.evento-fila>*{min-width:0}
+.table-responsive,.tabla-contenedor{width:100%;overflow-x:auto;overscroll-behavior-x:contain}
+@media(max-width:1100px){
+ .contenedor{max-width:100%}
+ .comite-grid,.invitados-grid,.group-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .galeria{grid-template-columns:repeat(3,minmax(0,1fr))}
+ .concursantes-grid,.concursantes-grupo__grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .cabecera__barra .nav{gap:9px}
+ .cabecera__barra .nav a,.nav-drop__disparador{font-size:.78rem}
+ .cabecera__barra .marca{padding-left:104px}
+ .cabecera__barra .logo-unad{width:98px!important;height:88px!important}
+}
+@media(max-width:900px){
+ .unad-footer__grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+ .unad-footer__brand{border-right:0;padding-right:0}
+ .heroe{min-height:620px;min-height:68svh}
+ .evento-fila{grid-template-columns:96px minmax(0,1fr)}
+}
+@media(max-width:760px){
+ .cabecera__barra{min-height:68px;height:auto;flex-wrap:nowrap;padding:5px 14px;gap:10px}
+ .cabecera__barra .marca{padding-left:82px;min-height:58px;flex:1 1 auto}
+ .cabecera__barra .logo-unad{width:78px!important;height:72px!important}
+ .cabecera__barra .marca__texto strong{font-size:clamp(.82rem,3.4vw,1rem)}
+ .cabecera__barra .marca__texto small,.cabecera__barra .sello-acreditacion-mini{display:none}
+ .cabecera__barra .menu-boton{flex:0 0 44px}
+ .cabecera__barra .nav{position:absolute;left:0;right:0;top:100%;width:100%;max-height:calc(100svh - 72px);overflow-y:auto;overflow-x:hidden}
+ .rejilla--3,.rejilla--2,.comite-grid,.invitados-grid,.group-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .galeria{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .homenaje__maestros{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .heroe{min-height:590px;min-height:72svh;background-position:58% center}
+ .heroe__contenido{max-width:100%}
+ .evento-fila{grid-template-columns:1fr;gap:8px}
+ .campo--fila{grid-template-columns:1fr}
+ .agenda-lanzamiento{grid-template-columns:76px minmax(0,1fr)}
+ .agenda-tabs{display:flex;overflow-x:auto;max-width:100%;gap:8px;scroll-snap-type:x proximity}
+ .agenda-tabs>*{flex:0 0 auto;scroll-snap-align:start}
+ .agenda-dias-completos{grid-template-columns:1fr}
+ .perfil-modal__ventana,.edicion-modal__ventana{width:calc(100vw - 20px);max-width:calc(100vw - 20px);max-height:calc(100svh - 20px);padding:clamp(12px,3vw,22px)}
+ .concursantes-seccion>.contenedor{padding-inline:16px}
+ .concursantes-grupo__grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .perfil-modal__layout{grid-template-columns:minmax(0,1fr) minmax(120px,38%)}
+ .unad-footer__grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+ .unad-footer__column h2,.unad-footer__contact h2{font-size:clamp(.76rem,2vw,.9rem);letter-spacing:.7px}
+ .unad-footer__certs-inner{gap:12px}
+ .top{padding:12px 16px;gap:10px;flex-wrap:wrap}
+ header.top .brand{min-height:72px;flex:1 1 100%;font-size:clamp(.82rem,2.6vw,1rem)}
+ header.top .brand img{width:82px!important;height:72px!important;max-width:24vw;margin-right:6px!important}
+ header.top .back{margin-left:auto}
+}
+@media(max-width:520px){
+ .contenedor{padding-inline:14px}
+ .seccion{padding-block:42px}
+ .rejilla--3,.rejilla--2,.comite-grid,.invitados-grid,.group-grid{grid-template-columns:1fr}
+ .galeria{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+ .homenaje__maestros{grid-template-columns:1fr}
+ .heroe{min-height:560px;min-height:76svh;padding-block:54px}
+ .heroe h1{font-size:clamp(2rem,10vw,3rem);line-height:1.05}
+ .heroe p{font-size:.98rem}
+ .heroe__acciones{grid-template-columns:1fr}
+ .contador{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .concursantes-grid{grid-template-columns:1fr}
+ .concursantes-grupo__grid{grid-template-columns:1fr}
+ .concursante-card{height:180px;min-height:180px}
+ .perfil-modal__layout{grid-template-columns:1fr}
+ .perfil-modal__imagen{grid-column:auto;grid-row:auto;max-height:38svh}
+ .perfil-modal__foto{max-height:38svh}
+ .perfil-modal__datos{grid-template-columns:1fr}
+ .agenda-lanzamiento{grid-template-columns:1fr}
+ .agenda-tabs{display:flex;flex-wrap:nowrap}
+ .agenda-tabs button{min-width:132px;padding:10px 12px}
+ .unad-footer__grid{grid-template-columns:1fr;gap:22px}
+ .unad-footer__brand{padding:0}
+ .unad-footer__brandmark{justify-content:flex-start}
+ .unad-footer__certs{padding:14px 10px}
+ .unad-footer__certs-inner{gap:8px}
+ .unad-footer__mineducacion{width:50%;max-height:52px!important}
+ .unad-footer__certificaciones{width:42%;max-height:58px!important}
+ .unad-footer__bottom{padding:28px 54px 22px;font-size:11px}
+ .unad-footer__bottom p:first-child{font-size:12px}
+ .unad-footer__access,.unad-footer__help{width:38px;height:38px;font-size:20px}
+ .top{padding:10px 12px}
+ header.top .brand{font-size:.82rem;line-height:1.3;gap:5px}
+ header.top .brand img{width:68px!important;height:62px!important}
+ .panel{padding:16px!important}
+}
+@media(max-width:360px){
+ .cabecera__barra{padding-inline:9px}
+ .cabecera__barra .marca{padding-left:70px}
+ .cabecera__barra .logo-unad{width:68px!important;height:64px!important}
+ .cabecera__barra .marca__texto strong{font-size:.78rem}
+ .galeria{gap:7px}
+ .unad-footer__social{gap:7px}
+ .unad-footer__social a{width:35px;height:35px}
+ .unad-footer__certs-inner img{max-height:46px!important}
+}
+@media(prefers-reduced-motion:reduce){
+ html{scroll-behavior:auto}
+ *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+}
