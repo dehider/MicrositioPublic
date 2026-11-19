@@ -1332,12 +1332,19 @@ header.top .brand{display:flex;align-items:center;gap:14px;min-height:116px}
   max-height:78px;width:auto;flex:0 1 auto;
 }
 .unad-footer__mineducacion{width: min(48%, 480px);max-height:72px!important}
+.unad-footer__sponsors{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;max-width:540px;flex:1 1 430px}
+.unad-footer__sponsors-title{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#075681;font-weight:800}
+.unad-footer__sponsors-list{display:grid;grid-template-columns:repeat(3,minmax(110px,1fr));gap:7px;width:100%}
+.sponsor-wordmark{display:flex;align-items:center;justify-content:center;min-height:38px;padding:6px 8px;border:1px solid #e1e7eb;border-radius:7px;background:#fff;color:#17364b;font-size:10px;line-height:1.15;font-weight:800;text-align:center;letter-spacing:.015em}
+.sponsor-wordmark--sayco{color:#d51d32;font-family:Georgia,serif;font-size:15px;letter-spacing:.04em}
+.sponsor-wordmark--acinpro{color:#277a70;font-size:13px}
+
 .unad-footer__certificaciones{width:min(38%, 380px);max-height:78px!important}
 @media(max-width:700px){
  .unad-footer__certs{padding:14px 10px 18px}
  .unad-footer__certs-inner{flex-direction:row;flex-wrap:nowrap;gap:12px;min-height:66px}
  .unad-footer__certs-inner img{max-height:58px!important;min-width:0}
- .unad-footer__mineducacion{width:50%}
+ .unad-footer__mineducacion{width:24%;max-height:58px!important}.unad-footer__sponsors{flex:1 1 68%;max-width:none}.unad-footer__sponsors-list{grid-template-columns:repeat(3,minmax(75px,1fr));gap:5px}.sponsor-wordmark{font-size:9px;min-height:34px;padding:5px}
  .unad-footer__certificaciones{width:42%}
 }
 @media(max-width:380px){
