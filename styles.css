@@ -55,7 +55,7 @@ p{margin:0 0 1em;color:var(--tinta-suave);max-width:62ch;}
 .rejilla{display:grid;gap:26px;} .rejilla--3{grid-template-columns:repeat(3,1fr);} .rejilla--2{grid-template-columns:repeat(2,1fr);}
 .tarjeta{background:#fff;border:1px solid var(--borde);border-radius:var(--radio);padding:28px;} .tarjeta h3{margin-bottom:.3em;}
 .tarjeta--oscura{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.12);}
-.icono-vallenato{width:52px;height:52px;margin-bottom:16px;}
+.icono-vallenato__marco{position:relative;display:inline-flex;width:62px;height:62px;align-items:center;justify-content:center;margin:0 0 16px;border-radius:15px;background:linear-gradient(145deg,#fff7e8,#f1f7fb);}.icono-vallenato{display:block;width:48px;height:48px;object-fit:contain;margin:0;filter:invert(18%) sepia(47%) saturate(1534%) hue-rotate(164deg) brightness(88%) contrast(96%);}.icono-vallenato__marco--libro .icono-vallenato{width:49px;height:49px;}.icono-vallenato__nota{position:absolute;width:25px;height:25px;right:-5px;top:-5px;filter:invert(56%) sepia(93%) saturate(2210%) hue-rotate(2deg) brightness(103%) contrast(104%);background:#fff;border-radius:50%;padding:3px;box-shadow:0 2px 7px #17354a22;}
 .franja-instrumentos{display:flex;flex-wrap:wrap;gap:34px;align-items:center;justify-content:space-between;padding:34px 0;}
 .franja-instrumentos figure{text-align:center;margin:0;flex:1 1 140px;}
 .franja-instrumentos figcaption{font-family:var(--fuente-cartel);letter-spacing:1px;margin-top:8px;font-size:1.05rem;color:var(--azul);}
