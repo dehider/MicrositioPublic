@@ -117,7 +117,7 @@ p{margin:0 0 1em;color:var(--tinta-suave);max-width:62ch;}
   .galeria{grid-template-columns:repeat(2,1fr);} .evento-fila{grid-template-columns:1fr;gap:6px;} .seccion{padding:56px 0;} .heroe{padding:64px 0 64px;}
 }
 
-/* Experiencia dinámica y adaptable, alineada con la identidad UNAD */
+
 :root{--radio:16px;--sombra:0 18px 50px -24px rgba(0,55,81,.38)}
 body{overflow-x:hidden}
 h1,h2,h3,h4{letter-spacing:-.035em}
@@ -161,7 +161,7 @@ input,select,textarea{transition:border-color .2s,box-shadow .2s}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}.reveal{opacity:1;transform:none}}
 
 
-/* Identidad folclórica: bordados, papel picado y fotografía de tarima */
+
 .heroe{background-image:linear-gradient(90deg,rgba(0,40,60,.96) 0%,rgba(0,86,129,.87) 52%,rgba(0,50,74,.38) 100%),url('https://portalvallenato.net/wp-content/uploads/2016/12/poncho-zuleta-y-el-cocha-molina-foto-cristian-rodrc3adfuez.jpg');background-size:cover;background-position:center 35%;}
 .heroe:before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.2;background-image:radial-gradient(circle at center,transparent 0 7px,var(--dorado) 7.5px 9px,transparent 9.5px);background-size:34px 34px;mask-image:linear-gradient(90deg,transparent,black);}
 .heroe__contenido{max-width:820px;text-shadow:0 2px 18px rgba(0,0,0,.24)}
@@ -191,7 +191,7 @@ input,select,textarea{transition:border-color .2s,box-shadow .2s}
 @media(max-width:720px){.homenaje__maestros{grid-template-columns:1fr}.maestro-card__foto{height:280px}.heroe{background-position:58% center}.homenaje__bordado{letter-spacing:.45rem}}
 
 
-/* Encabezado institucional limpio, sin barras decorativas horizontales */
+
 .logo-unad{width:76px;height:64px;object-fit:contain;flex:0 0 auto;}
 .logo-unad--pie{width:82px;height:72px;margin-bottom:12px;filter:brightness(0) invert(1);}
 .cabecera{border-bottom:0;background:rgba(255,255,255,.96);}
@@ -200,7 +200,7 @@ input,select,textarea{transition:border-color .2s,box-shadow .2s}
 .barra-progreso{display:none!important;}
 
 
-/* Pasillo 3D de memoria histórica */
+
 .pasillo-seccion{overflow:hidden;background:#e9ecef;}
 .pasillo-intro{max-width:760px;}
 .pasillo-escena{position:relative;perspective:1400px;isolation:isolate;padding:34px 0 22px;}
@@ -236,7 +236,7 @@ input,select,textarea{transition:border-color .2s,box-shadow .2s}
 @media(prefers-reduced-motion:reduce){.edicion-card,.edicion-card--foto>img{transition:none}}
 
 
-/* Sello institucional UNAD acreditada en alta calidad */
+
 .marca__texto small{font-size:.7rem;max-width:230px;}
 .sello-acreditacion-mini{display:inline-flex;align-items:center;gap:5px;margin-top:4px;color:#005681;font-size:.61rem;font-weight:900;letter-spacing:.045em;text-transform:uppercase;}
 .sello-acreditacion-mini:before{content:'✦';color:#ee7203;font-size:.8rem;}
@@ -263,7 +263,7 @@ input,select,textarea{transition:border-color .2s,box-shadow .2s}
 [hidden]{display:none!important;}
 @media(max-width:720px){.marca__texto small{display:none}.sello-acreditacion-mini{font-size:.52rem}.acreditacion-lockup img{width:68px;height:62px}.acreditacion-lockup__texto strong{font-size:.7rem}.acreditacion-lockup__texto span{font-size:.65rem}.construccion-panel{padding:30px 20px}}
 
-/* Fondo claro para la programación del festival */
+
 #programacion{
   position:relative;
   isolation:isolate;
@@ -277,21 +277,21 @@ input,select,textarea{transition:border-color .2s,box-shadow .2s}
 @media(max-width:700px){#programacion{background-position:58% center;background-image:linear-gradient(rgba(255,255,255,.94),rgba(255,255,255,.96)),url("fondo-programacion-vallenato.png");}}
 
 
-/* Ventana modal de las ediciones: permanece dentro del micrositio. */
+
 .edicion-modal[hidden]{display:none!important;}
 .edicion-modal{position:fixed;inset:0;z-index:300;display:flex;align-items:center;justify-content:center;padding:22px;}
 .edicion-modal__fondo{position:absolute;inset:0;background:rgba(0,18,30,.72);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);animation:edicionFondo .25s ease-out;}
 .edicion-modal__ventana{position:relative;z-index:1;width:min(980px,100%);max-height:min(92vh,880px);overflow-y:auto;overflow-x:hidden;display:grid;gap:18px;padding:22px;background:var(--papel);border:1px solid rgba(244,190,0,.6);border-radius:24px;box-shadow:0 30px 90px rgba(0,0,0,.45);animation:edicionModalEntrada .25s ease-out;scrollbar-width:thin;scrollbar-color:var(--azul) transparent;}
 .em-solo-lector{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}
 
-/* Banner (la imagen se pega en el campo "banner" de script.js) */
+
 .em-banner{position:relative;overflow:hidden;height:clamp(150px,24vw,230px);border-radius:20px;background:radial-gradient(circle at 92% 8%,rgba(244,190,0,.25),transparent 38%),linear-gradient(145deg,#00739b 0%,#005681 45%,#00344d 100%);}
 .em-banner__imagen{position:absolute;inset:0;}
 .em-banner__imagen img{width:100%;height:100%;object-fit:cover;}
 .edicion-modal__cerrar{position:absolute;right:14px;top:14px;z-index:2;width:42px;height:42px;border:1px solid rgba(255,255,255,.45);border-radius:50%;background:rgba(0,28,44,.55);color:#fff;font-size:1.8rem;line-height:1;cursor:pointer;transition:background .2s,color .2s,transform .2s;}
 .edicion-modal__cerrar:hover{background:var(--dorado);color:var(--azul-noche);transform:rotate(90deg);}
 
-/* Información y video */
+
 .em-medio{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;}
 .em-caja{display:flex;flex-direction:column;gap:14px;min-width:0;padding:22px 24px;background:#fff;border:1px solid var(--borde);border-radius:20px;box-shadow:0 8px 30px rgba(0,54,77,.07);}
 .em-caja__titulo{margin:0;font-family:var(--fuente-texto);font-size:.82rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--rojo);}
@@ -307,7 +307,7 @@ input,select,textarea{transition:border-color .2s,box-shadow .2s}
 .em-video{position:relative;aspect-ratio:16/9;border-radius:14px;overflow:hidden;background:radial-gradient(circle at 90% 8%,rgba(244,190,0,.25),transparent 36%),linear-gradient(155deg,#00648f,#00344d 72%);}
 .em-video iframe{position:absolute;inset:0;width:100%;height:100%;border:0;}
 
-/* Carrusel de fotografías */
+
 .em-galeria{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:12px;padding:18px;border-radius:20px;background:linear-gradient(145deg,#00648f,#00344d 72%);}
 .em-galeria__pista{display:flex;gap:14px;overflow-x:auto;padding:2px;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none;}
 .em-galeria__pista::-webkit-scrollbar{display:none;}
@@ -339,7 +339,7 @@ body.edicion-modal-abierto{overflow:hidden;}
 }
 @media(prefers-reduced-motion:reduce){.edicion-modal__ventana,.edicion-modal__fondo{animation:none;}}
 
-/* ===== Sección Concursantes: VII Festival 2026 ===== */
+
 .pagina-concursantes{background:#f5f6f7;}
 .concursantes-volver{white-space:nowrap;font-size:.85rem;padding:11px 17px;}
 .concursantes-hero{position:relative;overflow:hidden;padding:clamp(64px,9vw,112px) 0 60px;color:#fff;background:radial-gradient(circle at 86% 18%,rgba(244,190,0,.24),transparent 24%),linear-gradient(120deg,#002b40,#005681 68%,#00344d);}
@@ -391,7 +391,7 @@ body.perfil-modal-abierto{overflow:hidden;}
 @media(max-width:600px){.concursantes-grid{grid-template-columns:1fr;}.concursantes-resumen div{flex:1;min-width:135px}.perfil-modal__datos{grid-template-columns:1fr}.concursantes-volver{font-size:.72rem;padding:9px 11px}.marca__texto small{display:none;}}
 @media(prefers-reduced-motion:reduce){.concursante-card,.filtro-categoria{transition:none;}}
 
-/* Fotografías de los participantes */
+
 .concursante-card{overflow:hidden;padding:0 0 20px;}
 .concursante-card__foto{display:block;width:100%;height:220px;object-fit:cover;object-position:center 30%;background:#eef2f4;}
 .concursante-card__top,.concursante-card h3,.concursante-card__sub,.concursante-card__cancion,.concursante-card__ver{margin-left:22px;margin-right:22px;}
@@ -400,7 +400,7 @@ body.perfil-modal-abierto{overflow:hidden;}
 @media(max-width:600px){.concursante-card__foto{height:250px;}}
 
 
-/* Miniaturas a la derecha de cada tarjeta, usando la hoja de fotos del repositorio. */
+
 .concursante-card{padding:0;overflow:hidden;}
 .concursante-card__cuerpo{display:grid;grid-template-columns:minmax(0,1fr) 116px;align-items:stretch;gap:14px;min-height:190px;padding:18px;}
 .concursante-card__info{display:flex;flex-direction:column;align-items:flex-start;min-width:0;}
@@ -424,7 +424,7 @@ body.perfil-modal-abierto{overflow:hidden;}
 }
 
 
-/* Fotografías individuales en alta resolución: mantener el encuadre completo sin recortes agresivos. */
+
 .concursante-card__foto {
   display: block;
   width: 100%;
@@ -456,7 +456,7 @@ body.perfil-modal-abierto{overflow:hidden;}
 }
 
 
-/* ===== Ajustes Mobile First: navegación y lectura en celulares ===== */
+
 @media (max-width: 760px) {
   html { scroll-padding-top: 76px; }
   .cabecera { position: sticky; top: 0; z-index: 1000; }
@@ -488,7 +488,7 @@ body.perfil-modal-abierto{overflow:hidden;}
   .menu-boton[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
   .menu-boton[aria-expanded="true"] span:last-child { transform: translateY(-8px) rotate(-45deg); }
 
-  /* El menú ocupa una capa completa: nunca comprime ni deja ver el contenido por debajo. */
+  
   .nav,
   .nav.abierto {
     position: fixed;
@@ -616,7 +616,7 @@ body.perfil-modal-abierto{overflow:hidden;}
 }
 
 
-/* ===== Rediseño editorial de la sección Concursantes ===== */
+
 .pagina-concursantes{background:#eef0f2;color:#151c2a}
 .concursantes-header{position:relative;z-index:30;background:#001c32!important;color:#fff!important;border-bottom:1px solid rgba(255,255,255,.12)}
 .concursantes-header .cabecera__barra{min-height:104px;gap:28px}
@@ -727,7 +727,7 @@ body.perfil-modal-abierto{overflow:hidden;}
 @media(max-width:760px){body.menu-movil-abierto{overflow:hidden}.concursantes-header .menu-boton{display:flex;position:relative;z-index:1003;flex:0 0 44px;width:44px;height:44px;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.08)}.concursantes-header .menu-boton span{display:block;width:20px;height:2px;margin:3px 0;background:#fff}}
 
 
-/* ===== Rediseño integral de la página de concursantes ===== */
+
 .pagina-concursantes{min-height:100vh;background:linear-gradient(120deg,rgba(232,235,237,.96),rgba(246,247,248,.94) 52%,rgba(224,230,234,.96)),url('fondo-programacion-vallenato.png') center/cover fixed;color:#10283c}
 .pagina-concursantes .cabecera{background:#001d34;border:0;box-shadow:0 4px 20px rgba(0,0,0,.18);backdrop-filter:none}
 .pagina-concursantes .cabecera__barra{max-width:1600px;min-height:104px;padding:10px 28px}
@@ -772,7 +772,7 @@ body.perfil-modal-abierto{overflow:hidden;}
 .concursante-card--sin-foto{background:#e7eaec}
 .concursante-card--sin-foto .concursante-card__velo{width:100%;background:#e7eaec}
 .concursantes-fuente{margin:28px 0 0;background:rgba(255,255,255,.5)}
-/* Perfil ampliado: panel blanco a la derecha, manteniendo visible el listado */
+
 .perfil-modal{align-items:center;justify-content:flex-end;padding:20px;z-index:1500}
 .perfil-modal__fondo{background:rgba(7,18,28,.24);backdrop-filter:blur(1.5px)}
 .perfil-modal__ventana{width:min(710px,53vw);max-height:88vh;overflow-y:auto;padding:42px 28px 26px;border:0;border-radius:12px;background:#fff;box-shadow:0 14px 48px rgba(0,0,0,.22)}
@@ -843,7 +843,7 @@ body.perfil-modal-abierto{overflow:hidden;}
 }
 
 
-/* Ajuste de composición: listado a la izquierda y perfil activo a la derecha */
+
 .concursantes-grid{display:block}
 .concursantes-grupo{margin:0 0 24px}
 body.perfil-modal-abierto .concursantes-seccion>.contenedor{width:min(790px,53vw);max-width:790px;margin-left:0;margin-right:auto;padding-right:14px}
@@ -854,8 +854,8 @@ body.perfil-modal-abierto .busqueda-concursantes{max-width:730px}
 }
 
 
-/* ===== Coincidencia visual con la referencia enviada ===== */
-/* Vista de escritorio: listado a la izquierda y perfil superpuesto a la derecha */
+
+
 .pagina-concursantes{background:#e5e7e9;color:#142a3e}
 .pagina-concursantes .cabecera{height:104px;min-height:104px;background:#001b31;box-shadow:none}
 .pagina-concursantes .cabecera__barra{height:104px;min-height:104px;max-width:none;width:100%;padding:8px 28px;display:flex;justify-content:space-between}
@@ -893,7 +893,7 @@ body.perfil-modal-abierto .busqueda-concursantes{max-width:730px}
 .concursante-card__ver{margin-top:auto;font-size:.65rem}
 .concursantes-fuente{margin-top:26px}
 
-/* Perfil abierto: oscurecimiento leve del fondo y panel blanco a la derecha */
+
 .perfil-modal{position:fixed;inset:0;z-index:1500;display:flex;align-items:center;justify-content:flex-end;padding:24px 20px;background:rgba(25,35,45,.27);backdrop-filter:blur(1px)}
 .perfil-modal[hidden]{display:none!important}
 .perfil-modal__fondo{position:absolute;inset:0;background:transparent;backdrop-filter:none}
@@ -964,7 +964,7 @@ body.perfil-modal-abierto .concursantes-grupo__grid{grid-template-columns:repeat
 }
 
 
-/* Agenda oficial: presentación por fecha y cronograma */
+
 .agenda-oficial{background:linear-gradient(180deg,#f7f5ef 0%,#fff 100%)}
 .agenda-lanzamiento{display:grid;grid-template-columns:120px 1fr;gap:22px;align-items:center;margin:0 0 30px;padding:22px 26px;border:1px solid rgba(0,55,86,.14);border-left:5px solid #e6ad13;border-radius:14px;background:#fff;box-shadow:0 8px 24px rgba(0,34,56,.07)}
 .agenda-lanzamiento__fecha{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:12px;border-radius:10px;background:#002b49;color:#fff}
@@ -999,7 +999,7 @@ body.perfil-modal-abierto .concursantes-grupo__grid{grid-template-columns:repeat
  .agenda-fecha{flex-direction:column;gap:4px}
 }
 
-/* Mostrar simultáneamente las agendas completas de los tres días */
+
 .agenda-dias-completos{display:flex;flex-direction:column;gap:38px}
 .agenda-dia-visible{display:block!important;visibility:visible!important;opacity:1!important}
 .agenda-dia-visible[hidden]{display:block!important}
@@ -1009,7 +1009,7 @@ body.perfil-modal-abierto .concursantes-grupo__grid{grid-template-columns:repeat
 .agenda-evento time small{display:block;font-family:inherit;font-size:.65rem;white-space:normal}
 
 
-/* Agenda en tres columnas paralelas dentro del mismo contenedor */
+
 #programacion .agenda-dias-completos{
   display:grid!important;
   grid-template-columns:repeat(3,minmax(0,1fr));
@@ -1055,7 +1055,7 @@ body.perfil-modal-abierto .concursantes-grupo__grid{grid-template-columns:repeat
 }
 
 
-/* Selector interactivo: mostrar únicamente el día elegido */
+
 #programacion .agenda-selector{
   display:grid;
   grid-template-columns:repeat(3,minmax(0,1fr));
@@ -1089,7 +1089,7 @@ body.perfil-modal-abierto .concursantes-grupo__grid{grid-template-columns:repeat
 }
 
 
-/* Control definitivo de visibilidad de cada día de la agenda */
+
 #programacion .agenda-dias-completos{display:block!important}
 #programacion .agenda-dias-completos>.dia-panel{display:none!important}
 #programacion .agenda-dias-completos>.dia-panel[hidden]{display:none!important}
@@ -1102,7 +1102,7 @@ body.perfil-modal-abierto .concursantes-grupo__grid{grid-template-columns:repeat
 }
 
 
-/* Etiquetas de actividad ubicadas en el borde superior derecho de cada tarjeta */
+
 #programacion .agenda-evento{
   position:relative;
   padding-top:42px;
@@ -1133,7 +1133,7 @@ body.perfil-modal-abierto .concursantes-grupo__grid{grid-template-columns:repeat
 }
 
 
-/* Etiquetas de agenda en línea con el título de cada actividad */
+
 #programacion .agenda-evento{
   grid-template-columns:112px minmax(0,1fr);
   padding-top:20px;
@@ -1171,7 +1171,7 @@ body.perfil-modal-abierto .concursantes-grupo__grid{grid-template-columns:repeat
 }
 
 
-/* Tarjetas de versiones anteriores: mostrar únicamente el título del festival */
+
 .pasillo-recorrido .edicion-card__marco{justify-content:center;align-items:center;text-align:center}
 .pasillo-recorrido .edicion-card__numero,
 .pasillo-recorrido .edicion-card__sello,
@@ -1180,7 +1180,7 @@ body.perfil-modal-abierto .concursantes-grupo__grid{grid-template-columns:repeat
 .pasillo-recorrido .edicion-card__marco h3{margin:0;max-width:95%;font-size:clamp(1.15rem,2vw,1.55rem);line-height:1.2;text-shadow:0 2px 8px rgba(0,0,0,.55)}
 
 
-/* Reproductor del video oficial del festival */
+
 .video-festival{background:#f7f3eb}
 .video-festival__marco{
   position:relative;
@@ -1211,7 +1211,7 @@ body.perfil-modal-abierto .concursantes-grupo__grid{grid-template-columns:repeat
   text-underline-offset:3px;
 }
 
-/* Pie institucional UNAD compartido en todas las secciones */
+
 .unad-footer{position:relative;margin-top:0;color:#092b45;font-family:'IBM Plex Sans',Arial,sans-serif;background:#fff;line-height:1.45;}
 .unad-footer *{box-sizing:border-box}.unad-footer a{text-decoration:none}.unad-footer__upper{background:#f0f1f2;padding:24px 20px 16px;border-top:2px solid #f47721;}
 .unad-footer__grid{max-width:1300px;margin:auto;display:grid;grid-template-columns:1.12fr 1fr 1.18fr 1.1fr;gap:28px;}
@@ -1220,7 +1220,7 @@ body.perfil-modal-abierto .concursantes-grupo__grid{grid-template-columns:repeat
 @media(max-width:560px){.unad-footer__upper{padding:24px 16px}.unad-footer__grid{grid-template-columns:1fr;gap:24px}.unad-footer__brand{padding:0}.unad-footer__certs{padding:22px 12px 30px}.unad-footer__certs-inner{gap:10px}.unad-footer__bottom{padding:30px 64px 24px;font-size:11px}.unad-footer__access,.unad-footer__help{width:42px;height:42px;font-size:22px}.unad-footer__access{left:10px}.unad-footer__help{right:10px}}
 
 
-/* Ajustes visuales: logo UNAD protagonista y footer institucional más fiel al referente */
+
 .logo-unad,
 .marca-unad .logo-unad{
   width:clamp(112px, 9vw, 142px)!important;
@@ -1308,7 +1308,7 @@ body.perfil-modal-abierto .concursantes-grupo__grid{grid-template-columns:repeat
   .unad-footer__brandmark img{width:100px!important;height:90px!important}
 }
 
-/* Logotipo ampliado también en las páginas con encabezado compacto */
+
 header.top .brand img{
   width:128px!important;height:104px!important;max-width:34vw;
   object-fit:contain!important;padding:4px;background:#fff;border-radius:10px;
@@ -1320,7 +1320,7 @@ header.top .brand{display:flex;align-items:center;gap:14px;min-height:116px}
   header.top .brand{min-height:88px;gap:8px;font-size:.9rem}
 }
 
-/* Franja de acreditaciones: imágenes compactas en una sola fila */
+
 .unad-footer__certs{background:#fff;padding:18px 20px 22px}
 .unad-footer__certs-inner{
   max-width:1050px;margin:0 auto;min-height:86px;
@@ -1353,7 +1353,7 @@ header.top .brand{display:flex;align-items:center;gap:14px;min-height:116px}
 }
 
 
-/* Logo UNAD más grande sin aumentar la altura de la barra de navegación */
+
 .cabecera__barra{
   min-height:76px!important;
   height:76px;
@@ -1393,9 +1393,7 @@ header.top .brand{display:flex;align-items:center;gap:14px;min-height:116px}
 }
 
 
-/* =========================================================
-   RESPONSIVE GLOBAL — escritorio, portátil, tableta y móvil
-   ========================================================= */
+
 :root{scroll-behavior:smooth}
 *,*::before,*::after{box-sizing:border-box}
 html{width:100%;max-width:100%;overflow-x:clip;-webkit-text-size-adjust:100%;text-size-adjust:100%}
@@ -1538,7 +1536,7 @@ main,section,article,header,footer,nav{min-width:0}
 }
 
 
-/* LOGO INSTITUCIONAL HORIZONTAL — proporción de la referencia */
+
 .cabecera__barra{
   min-height:88px!important;
   height:auto!important;
