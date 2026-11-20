@@ -1,4 +1,4 @@
-/* Perfiles transcritos del PDF Perfiles.pdf. Los campos no incluidos en el documento se omiten. */
+
 const CONCURSANTES = [
  {id:1,nombre:"Dayana Manjarres",artistico:"La dama del acordeón",categoria:"Acordeoneros",edad:"19 años",canciones:"El Mejoral; El Siniestro de Ovejas; Alicia Adorada; Llegó la Patrona",ritmo:"Paseo, merengue, son y puya",descripcion:"Estudiante de Ingeniería Ambiental en la UNAD. Representa la Zona Caribe. Cuenta que su interés por el acordeón comenzó a los cinco años, motivada por su abuelo paterno. Con el apoyo de su padre adquirió su instrumento y lleva un año en la música. Ha participado en el Festival de Mujeres EVAFE en 2024, 2025 y 2026, y en el festival de Mariangola, Cesar, en 2026."},
  {id:2,nombre:"Daniel Andrés Julio Pabón",categoria:"Acordeoneros",canciones:"La Loma (paseo); Patillal (merengue); El Saludo (son); Déjenme Quieto (puya)",descripcion:"Acordeonero vallenato y discípulo del maestro Kalata Mendoza. Toca el acordeón desde los 12 años y señala que es tataranieto de Compadre Chipuco. Participa por primera vez en festivales vallenatos, con el propósito de crecer musicalmente y mantener viva la tradición."},
