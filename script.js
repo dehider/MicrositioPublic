@@ -49,7 +49,6 @@ document.addEventListener('DOMContentLoaded', function () {
     actualizar(); setInterval(actualizar, 1000);
   }
 
-  // Selector de agenda: solo se muestra el panel del día elegido.
   var agendaSelector = document.querySelector('#programacion .agenda-selector');
   if (agendaSelector) {
     var agendaTabs = agendaSelector.querySelectorAll('button[data-dia]');
@@ -110,8 +109,6 @@ document.addEventListener('DOMContentLoaded', function () {
     try{ localStorage.setItem('festival_unad_cookies_preview','esenciales'); }catch(e){}
     banner.hidden = true;
   });
-  // Garantiza que el aviso desaparezca visualmente al aceptar o rechazar,
-  // incluso si una regla CSS de display:flex intenta prevalecer sobre [hidden].
   function cerrarAvisoCookies(){
     banner.hidden = true;
     banner.style.display = 'none';
@@ -120,7 +117,6 @@ document.addEventListener('DOMContentLoaded', function () {
   document.getElementById('cookiesAceptar').addEventListener('click', cerrarAvisoCookies);
   document.getElementById('cookiesRechazar').addEventListener('click', cerrarAvisoCookies);
 
-  // Revelado progresivo al desplazarse, barra de lectura y acceso rápido al inicio.
   document.querySelectorAll('main section, main .tarjeta, main .seccion__cabecera, main .galeria figure, main .evento-fila, main .formulario').forEach(function(el){
     el.classList.add('reveal');
   });
@@ -141,13 +137,11 @@ document.addEventListener('DOMContentLoaded', function () {
   window.addEventListener('scroll', actualizarScroll, {passive:true});
   actualizarScroll();
   arriba.addEventListener('click', function(){window.scrollTo({top:0,behavior:'smooth'});});
-  // En móvil, cerrar el menú al elegir una sección.
   if(nav) nav.querySelectorAll('a').forEach(function(enlace){
     enlace.addEventListener('click', cerrarMenuMovil);
   });
 
 
-  // Las opciones pendientes del menú se muestran como vistas de página en construcción.
   var paginaConstruccion = document.getElementById('paginaConstruccion');
   var tituloConstruccion = document.getElementById('construccionTitulo');
   var descripcionConstruccion = document.getElementById('construccionDescripcion');
@@ -179,7 +173,6 @@ document.addEventListener('DOMContentLoaded', function () {
     enlace.addEventListener('click', function(){mostrarContenidoPrincipal();});
   });
 
-  // El botón APP queda preparado para que se agregue el enlace definitivo después.
   document.querySelectorAll('[data-app-placeholder]').forEach(function(enlace){
     enlace.addEventListener('click', function(event){
       if(enlace.getAttribute('href') === '#'){
@@ -190,14 +183,6 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
 
-  // ===== Ventana emergente de cada edición del Festival =====
-  // Todas las ediciones usan la MISMA estructura. Para completar una edición, edita su bloque aquí.
-  // La clave es el número romano de la tarjeta. Lo que quede vacío ('') se muestra como "Por confirmar".
-  //  - banner:   enlace (https) de la imagen tipo banner del encabezado.
-  //  - video:    enlace de inserción (https), por ejemplo https://www.youtube.com/embed/ID_DEL_VIDEO
-  //  - fotos:    lista de enlaces (https) de imágenes, uno por foto: ['https://...jpg', 'https://...jpg']
-  //  - enlace:   fuente oficial; si queda vacío se usa el enlace de la tarjeta (si lo tiene).
-  //  - detalle:  texto opcional; si queda vacío se usa la descripción de la tarjeta.
   var EDICIONES = {
     'I': {
       anio: '2020',
@@ -418,7 +403,7 @@ document.addEventListener('DOMContentLoaded', function () {
   function cerrarModalEdicion() {
     if (!edicionModal || edicionModal.hidden) return;
     edicionModal.hidden = true;
-    videoModal.textContent = ''; // detiene la reproducción del video al cerrar
+    videoModal.textContent = '';
     document.body.classList.remove('edicion-modal-abierto');
     if (edicionModalAnteriorFocus && typeof edicionModalAnteriorFocus.focus === 'function') edicionModalAnteriorFocus.focus();
   }
@@ -457,7 +442,6 @@ document.addEventListener('DOMContentLoaded', function () {
     if (!edicionModal || edicionModal.hidden) return;
     if (e.key === 'Escape') { cerrarModalEdicion(); return; }
     if (e.key === 'Tab' && ventanaModal) {
-      // Mantiene el foco dentro de la ventana mientras está abierta.
       var enfocables = Array.prototype.filter.call(
         ventanaModal.querySelectorAll('button:not([disabled]), a[href], iframe, [tabindex="0"]'),
         function (nodo) { return nodo.offsetParent !== null; }
@@ -470,7 +454,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
-  // Navegación del pasillo 3D por ediciones.
   var pasillo = document.querySelector('.pasillo-recorrido');
   var anterior = document.getElementById('pasilloAnterior');
   var siguiente = document.getElementById('pasilloSiguiente');
