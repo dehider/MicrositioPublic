@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Dashboard de asistencia | VII Festival UNAD</title>
+<title>Dashboard de invitados especiales | VII Festival UNAD</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
 <style>
@@ -19,7 +19,7 @@ h1,h2{font-family:Montserrat,sans-serif;line-height:1.15}h1{font-size:clamp(2rem
 .kpi{padding:20px}.kpi span{display:block;color:var(--muted);font-size:.86rem;font-weight:600}.kpi strong{display:block;color:var(--blue);font:800 2.2rem Montserrat,sans-serif;margin-top:6px}
 .panel{padding:24px;margin-top:18px}.panel h2{font-size:1.2rem;color:var(--navy);margin:0 0 6px}.sub{font-size:.88rem;color:var(--muted);margin:0 0 20px}
 .bars{display:grid;gap:13px}.barrow{display:grid;grid-template-columns:minmax(110px,220px) 1fr 42px;gap:12px;align-items:center}.barlabel{font-size:.9rem;font-weight:600;overflow-wrap:anywhere}.track{height:13px;background:#edf1f3;border-radius:99px;overflow:hidden}.fill{height:100%;width:0;background:linear-gradient(90deg,var(--blue),#1595b4);border-radius:99px;transition:width .35s}.value{text-align:right;font-weight:700;font-variant-numeric:tabular-nums}
-.days{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.day{border:1px solid var(--line);border-radius:12px;padding:16px;background:#fbfcfc}.day strong{font:700 1.5rem Montserrat;color:var(--blue);display:block}.day span{color:var(--muted);font-size:.85rem}
+.days{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}.day{border:1px solid var(--line);border-radius:12px;padding:16px;background:#fbfcfc}.day strong{font:700 1.5rem Montserrat;color:var(--blue);display:block}.day span{color:var(--muted);font-size:.85rem}
 .footer{text-align:center;color:var(--muted);font-size:.82rem;margin-top:30px}
 @media(max-width:760px){main{padding:32px 16px 55px}.kpis{grid-template-columns:repeat(2,1fr)}.barrow{grid-template-columns:100px 1fr 32px;gap:8px}.panel{padding:18px}.days{grid-template-columns:1fr}}
 @media(max-width:390px){.kpis{grid-template-columns:1fr 1fr}.kpi{padding:14px}.kpi strong{font-size:1.8rem}}
@@ -27,46 +27,44 @@ h1,h2{font-family:Montserrat,sans-serif;line-height:1.15}h1{font-size:clamp(2rem
 <body>
 <header class="top"><a class="brand" href="index.html"><img src="images/LOGO%20-%20UNAD.png" alt="UNAD" style="width:76px;height:70px;object-fit:contain;vertical-align:middle;margin-right:14px">UNAD · VII FESTIVAL VALLENATO</a><a class="back" href="index.html">← Volver al micrositio</a></header>
 <main>
-<div class="eyebrow">Gestión de invitados · 2026</div>
-<h1>Dashboard de asistencia</h1>
-<p class="intro">Resumen de confirmaciones de asistencia al VII Festival Internacional Universitario de Música Vallenata. Consulta los registros consolidados por día y explora la distribución general de los participantes.</p>
-<div class="note"><strong>Protección de datos:</strong> esta vista presenta únicamente cifras agrupadas. No publica nombres, documentos de identidad, correos electrónicos ni datos de contacto.</div>
-<div class="filters"><label for="dia">Día de participación</label><select id="dia"><option value="17">17 de noviembre</option><option value="18">18 de noviembre</option><option value="19">19 de noviembre</option></select><label for="dimension">Distribución por</label><select id="dimension"><option value="estamento">Estamento</option><option value="escuela">Escuela / unidad</option><option value="zona">Zona</option><option value="ciudad">Ciudad de residencia</option></select></div>
+<div class="eyebrow">Gestión de invitados · VII Festival Vallenato UNAD · 2026</div>
+<h1>Dashboard de invitados especiales</h1>
+<p class="intro">Consolidado de los registros de invitación para Concursos, Conversatorio Vida y Obra, Foro Académico y Noche de Gala, según las cuatro bases de seguimiento aportadas.</p>
+<div class="note"><strong>Alcance:</strong> las cifras corresponden a registros con nombre en cada base, no necesariamente a personas únicas entre eventos. La confirmación es un estado de gestión, no una constancia de asistencia efectiva. Los registros con estado pendiente o sin diligenciar no se consideran confirmados. No se publican datos personales.</div>
+<div class="filters"><label for="evento">Evento</label><select id="evento"><option value="todos">Todos los eventos</option><option value="concursos">Concursos · 17, 18 y 19 nov.</option><option value="conversatorio">Conversatorio · 17 nov.</option><option value="foro">Foro académico · 18 nov.</option><option value="gala">Noche de gala · 19 nov.</option></select><label for="dimension">Distribución por</label><select id="dimension"><option value="estado">Estado de invitación</option><option value="modalidad">Modalidad prevista</option><option value="tipo">Tipo de invitado</option></select></div>
 <section class="kpis" aria-live="polite">
-<div class="kpi"><span>Personas únicas registradas</span><strong>38</strong></div>
-<div class="kpi"><span>Respuestas recibidas</span><strong>39</strong></div>
-<div class="kpi"><span>Participantes del día seleccionado</span><strong id="kDia">30</strong></div>
-<div class="kpi"><span>Modalidad presencial · día</span><strong id="kPres">28</strong></div>
+<div class="kpi"><span>Registros de invitados</span><strong id="kTotal">534</strong></div>
+<div class="kpi"><span>Confirmados</span><strong id="kConfirmados">316</strong></div>
+<div class="kpi"><span>Proyectados</span><strong id="kProyectados">123</strong></div>
+<div class="kpi"><span>Sin estado</span><strong id="kSinEstado">91</strong></div>
 </section>
-<section class="panel"><h2 id="tituloDia">Participación · 17 de noviembre</h2><p class="sub">Personas únicas que marcaron participación en el día seleccionado. Una persona puede elegir más de un día y modalidad.</p><div class="days">
-<div class="day"><strong id="presencial">28</strong><span>Confirmaciones presenciales</span></div>
-<div class="day"><strong id="virtual">3</strong><span>Confirmaciones virtuales</span></div>
-<div class="day"><strong id="totalDia">30</strong><span>Personas participantes en el día</span></div>
-</div></section>
-<section class="panel"><h2 id="tituloDistribucion">Distribución por estamento</h2><p class="sub">Distribución general de las personas únicas registradas. Las categorías con menos de dos registros se agrupan para reducir el riesgo de identificación indirecta.</p><div class="bars" id="grafica" role="img" aria-label="Gráfica de distribución de participantes"></div></section>
-<p class="footer">Fuente: archivo de confirmación de asistencia al VII Festival · Datos consolidados para consulta estadística.</p>
+<section class="panel"><h2 id="tituloDistribucion">Distribución por estado de invitación</h2><p class="sub">Selecciona un evento y una dimensión para explorar sus registros consolidados.</p><div class="bars" id="grafica" role="img" aria-label="Distribución de invitados"></div></section>
+<section class="panel"><h2>Registros por evento</h2><p class="sub">Los eventos se muestran por separado; una misma persona podría estar incluida en más de uno.</p><div class="days" id="eventosResumen"></div></section>
+<section class="panel"><h2>Concursos · detalle por jornada</h2><p class="sub">Distribución según el campo «Evento» de la base de concursos.</p><div class="days"><div class="day"><strong>175</strong><span>17 de noviembre · desfile de piloneras</span></div><div class="day"><strong>35</strong><span>18 de noviembre · concurso PM</span></div><div class="day"><strong>23</strong><span>19 de noviembre · concurso AM</span></div></div></section>
+<p class="footer">Fuentes: Consolidado_Concursos.xlsx, Consolidado_Conversatorio.xlsx, Consolidado_Foro_Academico.xlsx y Consolidado_Noche_de_Gala.xlsx. Corte: archivos suministrados para esta actualización. Cifras calculadas a partir de las hojas «Base invitados»; no equivalen a aforo real.</p>
 </main>
 <script>
-const DATA = {"responses":39,"unique":38,"days":{"17":{"attendees":30,"presencial":28,"virtual":3},"18":{"attendees":20,"presencial":17,"virtual":4},"19":{"attendees":29,"presencial":28,"virtual":2}},"dimensions":{"estamento":{"Docente":18,"Administrativo":10,"Contratista":4,"Externo UNAD":5,"Egresado UNAD":1},"escuela":{"Otra Unidades - Externo":16,"ECSAH":4,"DIRECTOR":4,"ECISA":3,"VIACI":2,"ECAPMA":2,"VISAE":2,"ECBTI":1,"VIDER":1,"GPIT":1,"GAF":1,"RCA":1},"zona":{"Caribe":32,"Externos":3,"Occidente":2,"Sede Nacional JCM":1},"ciudad":{"Valledupar":11,"Sahagún":8,"Barranquilla":7,"Cartagena":3,"Medellín":2,"Aguachica":1,"Sincelejo":1,"Riohacha":1,"Curumani":1,"Corozal":1,"Bogotá":1,"Por verificar":1}}};
-const labels={estamento:'estamento',escuela:'escuela / unidad',zona:'zona',ciudad:'ciudad de residencia'};
+const DATA={
+concursos:{label:"Concursos",total:233,estado:{"Confirmado":233,"Enviado":0,"Proyectado":0,"Sin estado":0},modalidad:{"Presencial":233,"Virtual":0,"Sin modalidad":0},tipo:{"Universidad":210,"Funcionario UNAD":10,"Docente":10,"Otro":2,"Sin tipo":1}},
+conversatorio:{label:"Conversatorio",total:150,estado:{"Confirmado":52,"Enviado":3,"Proyectado":66,"Sin estado":29},modalidad:{"Presencial":123,"Virtual":0,"Sin modalidad":27},tipo:{"Gobernación":2,"Otro":19,"Universidad":2,"Directivo":2,"Empresario":3,"Alcaldía":7,"Gobierno":1,"Sin tipo":23,"Invitado especial":62,"Funcionario UNAD":29}},
+foro:{label:"Foro académico",total:101,estado:{"Confirmado":26,"Enviado":0,"Proyectado":48,"Sin estado":27},modalidad:{"Presencial":93,"Virtual":0,"Sin modalidad":8},tipo:{"Directivo":24,"Invitado especial":16,"Empresario":2,"Otro":20,"Docente":19,"Universidad":1,"Sin tipo":10,"Alcaldía":1,"Funcionario UNAD":8}},
+gala:{label:"Noche de gala",total:50,estado:{"Confirmado":5,"Enviado":1,"Proyectado":9,"Sin estado":35},modalidad:{"Presencial":28,"Virtual":0,"Sin modalidad":22},tipo:{"Otro":17,"Gobierno":1,"Invitado especial":12,"Alcaldía":1,"Sin tipo":19}}
+};
 const $=id=>document.getElementById(id);
-function actualizarDia(){
- const d=$('dia').value,x=DATA.days[d];
- $('kDia').textContent=x.attendees;$('kPres').textContent=x.presencial;
- $('presencial').textContent=x.presencial;$('virtual').textContent=x.virtual;$('totalDia').textContent=x.attendees;
- $('tituloDia').textContent='Participación · '+d+' de noviembre';
+function datos(){const k=$('evento').value;if(k!=='todos')return DATA[k];const rows=Object.values(DATA);const out={label:"Todos los eventos",total:0,estado:{},modalidad:{},tipo:{}};for(const row of rows){out.total+=row.total;for(const d of ["estado","modalidad","tipo"]){for(const [key,value] of Object.entries(row[d]))out[d][key]=(out[d][key]||0)+value;}}return out;}
+function actualizar(){
+const x=datos(),dim=$('dimension').value;
+$('kTotal').textContent=x.total;
+$('kConfirmados').textContent=x.estado.Confirmado||0;
+$('kProyectados').textContent=x.estado.Proyectado||0;
+$('kSinEstado').textContent=x.estado["Sin estado"]||0;
+$('tituloDistribucion').textContent='Distribución por '+({estado:"estado de invitación",modalidad:"modalidad prevista",tipo:"tipo de invitado"}[dim])+' · '+x.label;
+const items=Object.entries(x[dim]).filter(([_,v])=>v>0).sort((a,b)=>b[1]-a[1]);
+const max=Math.max(1,...items.map(x=>x[1]));
+$('grafica').replaceChildren(...items.map(([name,value])=>{const row=document.createElement('div');row.className='barrow';const label=document.createElement('div');label.className='barlabel';label.textContent=name;const track=document.createElement('div');track.className='track';const fill=document.createElement('div');fill.className='fill';fill.style.width=(value/max*100)+'%';track.append(fill);const val=document.createElement('div');val.className='value';val.textContent=value;row.append(label,track,val);return row;}));
+$('eventosResumen').replaceChildren(...Object.values(DATA).map(x=>{const div=document.createElement('div');div.className='day';const strong=document.createElement('strong');strong.textContent=x.total;const span=document.createElement('span');span.textContent=x.label+' · '+x.estado.Confirmado+' confirmados';div.append(strong,span);return div;}));
 }
-function actualizarGrafica(){
- const key=$('dimension').value,raw=DATA.dimensions[key],items=Object.entries(raw).sort((a,b)=>b[1]-a[1]);
- const agrupados=items.filter(x=>x[1]>=2),otros=items.filter(x=>x[1]<2).reduce((s,x)=>s+x[1],0);
- if(otros)agrupados.push(['Otras categorías',otros]);
- const max=Math.max(...agrupados.map(x=>x[1]),1);
- $('tituloDistribucion').textContent='Distribución por '+labels[key];
- $('grafica').innerHTML=agrupados.map(([name,value])=>'<div class="barrow"><div class="barlabel"></div><div class="track"><div class="fill"></div></div><div class="value"></div></div>').join('');
- [...$('grafica').children].forEach((row,i)=>{const [name,value]=agrupados[i];row.querySelector('.barlabel').textContent=name;row.querySelector('.fill').style.width=(value/max*100)+'%';row.querySelector('.value').textContent=value;});
-}
-$('dia').addEventListener('change',actualizarDia);$('dimension').addEventListener('change',actualizarGrafica);
-actualizarDia();actualizarGrafica();
+$('evento').addEventListener('change',actualizar);$('dimension').addEventListener('change',actualizar);actualizar();
 </script><footer class="unad-footer" aria-label="Pie de página institucional">
   <div class="unad-footer__upper">
     <div class="unad-footer__grid">
