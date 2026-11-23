@@ -1,0 +1,58 @@
+name: Static site security audit
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Audit published source files
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+          import sys
+
+          root = Path(".")
+          issues = []
+          ignored = {".git", ".github", "node_modules"}
+          files = [p for p in root.rglob("*") if p.is_file() and not any(part in ignored for part in p.parts)]
+          public_files = [p for p in files if p.suffix.lower() in {".html", ".js"}]
+          forbidden_names = re.compile(r"(^|/)(\.env(?:\..*)?|id_rsa|id_ed25519|.*\.(?:pem|key|p12|pfx)|.*(?:credentials|secrets).*\.json)$", re.I)
+
+          for p in files:
+              if forbidden_names.search(p.as_posix()):
+                  issues.append(f"Potential sensitive file published: {p}")
+
+          for p in public_files:
+              source = p.read_text(encoding="utf-8")
+              if re.search(r"\beval\s*\(|\bnew\s+Function\s*\(", source):
+                  issues.append(f"Dynamic code execution found: {p}")
+              if re.search(r"\bdocument\.write\s*\(", source):
+                  issues.append(f"document.write found: {p}")
+              if p.suffix.lower() == ".html":
+                  for match in re.finditer(r"<a\b[^>]*>", source, re.I | re.S):
+                      tag = match.group(0)
+                      if re.search(r"\btarget\s*=\s*[\"']_blank[\"']", tag, re.I):
+                          rel = re.search(r"\brel\s*=\s*[\"']([^\"']*)[\"']", tag, re.I)
+                          if not rel or "noopener" not in rel.group(1).lower().split():
+                              issues.append(f"Unprotected target=_blank in {p}")
+          if issues:
+              for issue in issues:
+                  print(f"::error::{issue}")
+              sys.exit(1)
+          print(f"Security checks passed: {len(public_files)} HTML/JS files checked.")
+          PY
